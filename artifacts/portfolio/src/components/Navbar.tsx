@@ -5,6 +5,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
   { name: "About", href: "#about" },
+  { name: "Journey", href: "#journey" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Services", href: "#services" },
@@ -27,46 +28,50 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border/50 py-3 shadow-sm"
+          ? "bg-background/85 backdrop-blur-xl border-b border-border/50 py-3 shadow-sm"
           : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <a href="#" className="text-xl md:text-2xl font-bold tracking-tighter flex items-center gap-2 group">
-          <span className="bg-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+        <a
+          href="#hero"
+          className="text-xl md:text-2xl font-bold tracking-tighter flex items-center gap-2.5 group"
+          data-testid="nav-logo"
+        >
+          <span className="bg-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 text-sm font-bold">
             A
           </span>
           <span className="hidden sm:inline-block">Adetayo</span>
         </a>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
             >
               {link.name}
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-300" />
             </a>
           ))}
-          <div className="w-px h-5 bg-border mx-2"></div>
+          <div className="w-px h-5 bg-border mx-1" />
           <ThemeToggle />
         </nav>
 
-        {/* Mobile Toggle */}
-        <div className="flex md:hidden items-center gap-4">
+        <div className="flex md:hidden items-center gap-3">
           <ThemeToggle />
           <button
-            className="text-foreground p-2 -mr-2"
+            className="text-foreground p-2 -mr-2 rounded-lg hover:bg-muted transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            data-testid="mobile-menu-toggle"
+            aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Nav Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -75,12 +80,12 @@ export function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden border-b border-border bg-background/95 backdrop-blur-xl overflow-hidden"
           >
-            <div className="container mx-auto px-6 py-4 flex flex-col gap-4">
+            <div className="container mx-auto px-6 py-6 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-lg font-medium text-foreground py-2 border-b border-border/50 last:border-0"
+                  className="text-base font-medium text-foreground py-3 px-3 rounded-lg hover:bg-muted hover:text-primary transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
