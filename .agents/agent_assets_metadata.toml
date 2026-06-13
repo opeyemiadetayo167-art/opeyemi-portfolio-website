@@ -1,0 +1,20 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "en33f10s_vcX-U0wYrw9w"
+uri = "file://artifacts/portfolio/public/projects/project1.png"
+type = "image"
+title = "Personal development habit tracker app"
+
+[[generated]]
+id = "eDK1iZxdBMhSzrtou41e2"
+uri = "file://artifacts/portfolio/public/projects/project2.png"
+type = "image"
+title = "Modern furniture store ecommerce website"
+
+[[generated]]
+id = "BiPFY0WOEuGsw08NIMMVn"
+uri = "file://artifacts/portfolio/public/projects/project3.png"
+type = "image"
+title = "Sleek developer portfolio website"
