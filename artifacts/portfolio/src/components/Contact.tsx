@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Mail, MessageCircle, Linkedin } from "lucide-react";
 import { SiFiverr } from "react-icons/si";
 import { Button } from "@/components/ui/button";
+import { ContactForm } from "./ContactForm";
 
 const contacts = [
   {
@@ -95,14 +96,11 @@ export function Contact() {
             })}
           </div>
 
-          <div className="text-center">
-            <p className="text-muted-foreground mb-6 text-sm">Prefer a direct message?</p>
-            <Button size="lg" className="h-14 px-10 text-base shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow" asChild>
-              <a href="mailto:adetayo@email.com">
-                <Mail className="mr-2 w-4 h-4" />
-                Send Me an Email
-              </a>
-            </Button>
+          <div className="mt-4">
+            <div className="text-center mb-8">
+              <p className="text-muted-foreground text-sm">Or send a message directly — I'll reply within 24 hours.</p>
+            </div>
+            <ContactForm />
           </div>
         </motion.div>
       </div>
