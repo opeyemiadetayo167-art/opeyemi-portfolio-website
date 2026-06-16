@@ -27,8 +27,8 @@ export function Skills() {
           className="max-w-4xl mx-auto"
         >
           <div className="flex items-center gap-4 mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Skills & Stack</h2>
-            <div className="h-px bg-border flex-1 ml-4" />
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Skills &amp; Stack</h2>
+            <div className="h-px bg-gradient-to-r from-primary/50 to-transparent flex-1 ml-4" />
           </div>
 
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
@@ -39,8 +39,8 @@ export function Skills() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="px-6 py-3 rounded-full bg-background border border-border text-foreground font-medium shadow-sm hover:border-primary/50 hover:shadow-primary/20 hover:text-primary transition-all cursor-default"
+                whileHover={{ scale: 1.08, y: -3 }}
+                className="px-6 py-3 rounded-full bg-background border border-border text-foreground font-medium shadow-sm hover:border-primary hover:text-primary transition-all cursor-default dark:hover:[box-shadow:0_0_14px_hsla(195,100%,55%,0.4)] dark:hover:border-primary/80"
               >
                 {skill}
               </motion.div>
