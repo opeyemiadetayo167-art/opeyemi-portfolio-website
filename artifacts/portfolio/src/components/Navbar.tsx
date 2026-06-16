@@ -32,18 +32,7 @@ export function Navbar() {
           : "bg-transparent py-5"
       }`}
     >
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <a
-          href="#hero"
-          className="text-xl md:text-2xl font-bold tracking-tighter flex items-center gap-2.5 group"
-          data-testid="nav-logo"
-        >
-          <span className="bg-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 text-sm font-bold">
-            A
-          </span>
-          <span className="hidden sm:inline-block">Adetayo</span>
-        </a>
-
+      <div className="container mx-auto px-6 md:px-12 flex items-center justify-end">
         <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
