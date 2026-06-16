@@ -41,7 +41,7 @@ export function Hero() {
           >
             Hi, I'm{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-primary to-blue-500 dark:from-cyan-300 dark:via-sky-400 dark:to-blue-400 dark:[filter:drop-shadow(0_0_20px_hsla(195,100%,55%,0.6))]">
-              Adetayo
+              Opeyemi
             </span>
             <br />
             <span className="text-3xl md:text-5xl lg:text-6xl text-muted-foreground mt-2 block leading-tight">

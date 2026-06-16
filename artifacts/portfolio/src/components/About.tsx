@@ -47,7 +47,7 @@ export function About() {
               </h2>
               <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Hey, I'm <strong className="text-foreground">Adetayo Opeyemi</strong> — a 19-year-old Frontend Developer and AI Website Builder. I specialize in building responsive websites, high-converting landing pages, and modern UI experiences that help businesses grow online.
+                  Hey, I'm <strong className="text-foreground">Opeyemi Adetayo</strong> — a 19-year-old Frontend Developer and AI Website Builder. I specialize in building responsive websites, high-converting landing pages, and modern UI experiences that help businesses grow online.
                 </p>
                 <p>
                   What sets me apart is my ability to leverage AI-assisted development tools to deliver professional, production-ready websites faster than traditional workflows — without sacrificing quality or attention to detail.

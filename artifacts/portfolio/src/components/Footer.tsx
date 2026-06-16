@@ -10,7 +10,7 @@ export function Footer() {
       <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex flex-col items-center md:items-start gap-1">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Adetayo Opeyemi. All rights reserved.
+            © {currentYear} Opeyemi Adetayo. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground/60">
             Designed & built with React, Tailwind CSS & AI tools.
