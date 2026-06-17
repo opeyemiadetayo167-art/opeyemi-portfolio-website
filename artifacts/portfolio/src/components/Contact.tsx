@@ -1,32 +1,31 @@
 import { motion } from "framer-motion";
 import { Mail, MessageCircle, Linkedin } from "lucide-react";
-import { SiFiverr } from "react-icons/si";
-import { Button } from "@/components/ui/button";
+import { SiUpwork } from "react-icons/si";
 import { ContactForm } from "./ContactForm";
 
 const contacts = [
   {
     name: "Email",
-    value: "adetayo@email.com",
+    value: "opeyemiadetayo167@gmail.com",
     subtext: "Best for project inquiries",
     Icon: Mail,
-    href: "mailto:adetayo@email.com",
+    href: "mailto:opeyemiadetayo167@gmail.com",
     colorClasses: "group-hover:text-rose-400 group-hover:border-rose-400/30 group-hover:bg-rose-400/5",
   },
   {
     name: "WhatsApp",
-    value: "+234 XXX XXX XXXX",
+    value: "+234 816 365 7206",
     subtext: "Quick responses",
     Icon: MessageCircle,
-    href: "https://wa.me/2341234567890",
+    href: "https://wa.me/2348163657206",
     colorClasses: "group-hover:text-green-400 group-hover:border-green-400/30 group-hover:bg-green-400/5",
   },
   {
-    name: "Fiverr",
-    value: "fiverr.com/adetayo",
-    subtext: "Hire me on Fiverr",
-    Icon: SiFiverr,
-    href: "https://fiverr.com",
+    name: "Upwork",
+    value: "Hire me on Upwork",
+    subtext: "Verified freelancer",
+    Icon: SiUpwork,
+    href: "https://www.upwork.com/freelancers/~0126213fc8bb196fc4?companyReference=2046389435861582425&mp_source=share",
     colorClasses: "group-hover:text-emerald-400 group-hover:border-emerald-400/30 group-hover:bg-emerald-400/5",
   },
   {

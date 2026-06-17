@@ -1,9 +1,21 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
-import { SiFiverr } from "react-icons/si";
-
+import { Linkedin } from "lucide-react";
+import { SiUpwork } from "react-icons/si";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const socials = [
+    {
+      href: "https://www.upwork.com/freelancers/~0126213fc8bb196fc4?companyReference=2046389435861582425&mp_source=share",
+      label: "Upwork",
+      Icon: SiUpwork,
+    },
+    {
+      href: "https://linkedin.com",
+      label: "LinkedIn",
+      Icon: Linkedin,
+    },
+  ];
 
   return (
     <footer data-testid="footer" className="py-8 border-t border-border bg-background">
@@ -13,47 +25,23 @@ export function Footer() {
             © {currentYear} Opeyemi Adetayo. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground/60">
-            Designed & built with React, Tailwind CSS & AI tools.
+            Designed &amp; built with React, Tailwind CSS &amp; AI tools.
           </p>
         </div>
 
         <div className="flex items-center gap-1">
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="text-muted-foreground hover:text-primary transition-colors p-2.5 rounded-lg hover:bg-muted"
-          >
-            <Github size={18} />
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="text-muted-foreground hover:text-primary transition-colors p-2.5 rounded-lg hover:bg-muted"
-          >
-            <Linkedin size={18} />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter/X"
-            className="text-muted-foreground hover:text-primary transition-colors p-2.5 rounded-lg hover:bg-muted"
-          >
-            <Twitter size={18} />
-          </a>
-          <a
-            href="https://fiverr.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Fiverr"
-            className="text-muted-foreground hover:text-primary transition-colors p-2.5 rounded-lg hover:bg-muted"
-          >
-            <SiFiverr size={17} />
-          </a>
+          {socials.map(({ href, label, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="text-muted-foreground hover:text-primary transition-colors p-2.5 rounded-lg hover:bg-muted"
+            >
+              <Icon size={18} />
+            </a>
+          ))}
         </div>
       </div>
     </footer>
