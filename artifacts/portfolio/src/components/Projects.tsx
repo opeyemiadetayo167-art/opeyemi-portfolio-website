@@ -17,6 +17,27 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "The Oyster Society",
+    shortDescription:
+      "Luxury events catering website for London's premier mobile oyster, caviar & champagne brand — built to convert high-intent visitors into event bookings.",
+    overview:
+      "Built a clean, elegant website for The Oyster Society, London's premier luxury mobile catering brand specialising in oysters, caviar, and champagne experiences. The site showcases their full service offering — from live oyster shucking and roaming caviar belts to masterclasses and canapés — with a polished visual identity that mirrors the premium, high-end nature of their clientele (Rolls Royce, Cartier, Sotheby's, National Portrait Gallery).",
+    image:
+      "https://static.wixstatic.com/media/6580d8_575cb7b7d4f94bfaab926838549c4db1~mv2.jpg",
+    tags: ["Wix", "E-Commerce", "Event Booking", "Business Website"],
+    features: [
+      "Multi-service showcase covering oyster shucking, caviar belts, masterclasses & canapés",
+      "Client testimonials section highlighting premium brand partnerships",
+      "Event enquiry form for high-intent booking conversions",
+      "Integrated Instagram feed for social proof",
+      "E-commerce shop for gifts and experiences",
+    ],
+    problem:
+      "Luxury catering brands need an online presence that matches the prestige of their service. The Oyster Society required a site that felt as premium as their clientele — Rolls Royce, Cartier, Sotheby's — while making it effortless for event planners to enquire and book.",
+    demo: "https://www.oystersociety.co.uk",
+    github: null,
+  },
+  {
     title: "Personal Development App",
     shortDescription: "A comprehensive web app for tracking personal growth goals, habits, and daily achievements.",
     overview:
@@ -166,9 +187,13 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               )}
               {project.demo ? (
                 <Button size="sm" className="gap-2" asChild>
-                  <a href={project.demo}>
+                  <a
+                    href={project.demo}
+                    target={project.demo.startsWith("http") ? "_blank" : "_self"}
+                    rel="noopener noreferrer"
+                  >
                     <ExternalLink size={15} />
-                    Live Demo
+                    Live Site
                   </a>
                 </Button>
               ) : (
@@ -285,15 +310,24 @@ export function Projects() {
                         Coming Soon
                       </Button>
                     )}
-                    <Button
-                      size="sm"
-                      className="gap-2 h-9"
-                      onClick={() => setSelectedProject(project)}
-                      data-testid={`view-details-${index}`}
-                    >
-                      <ExternalLink size={14} />
-                      View Details
-                    </Button>
+                    {project.demo && project.demo.startsWith("http") ? (
+                      <Button size="sm" className="gap-2 h-9" asChild>
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink size={14} />
+                          Live Site
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button
+                        size="sm"
+                        className="gap-2 h-9"
+                        onClick={() => setSelectedProject(project)}
+                        data-testid={`view-details-${index}`}
+                      >
+                        <ExternalLink size={14} />
+                        View Details
+                      </Button>
+                    )}
                   </div>
                 </div>
               </motion.div>
