@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const FORMSPREE_URL = "https://formspree.io/f/mvznnnva";
+
 interface FormState {
   name: string;
   email: string;
@@ -34,24 +36,26 @@ export function ContactForm() {
     setErrorMessage("");
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(FORMSPREE_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify(form),
       });
 
       const data = await res.json();
 
-      if (res.ok && data.success) {
+      if (res.ok && data.ok) {
         setStatus("success");
         setForm({ name: "", email: "", subject: "", message: "" });
       } else {
         setStatus("error");
-        setErrorMessage(
-          Array.isArray(data.details)
-            ? data.details.join(". ")
-            : data.error ?? "Something went wrong. Please try again."
-        );
+        const errMsg = data.errors
+          ? data.errors.map((err: { message: string }) => err.message).join(". ")
+          : "Something went wrong. Please try again.";
+        setErrorMessage(errMsg);
       }
     } catch {
       setStatus("error");
