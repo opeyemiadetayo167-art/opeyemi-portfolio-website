@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Journey", href: "#journey" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Services", href: "#services" },
-  { name: "Contact", href: "#contact" },
+  { name: "WORK", href: "#projects" },
+  { name: "ABOUT", href: "#about" },
+  { name: "SERVICES", href: "#services" },
+  { name: "CONTACT", href: "#contact" },
 ];
 
 export function Navbar() {
@@ -18,69 +15,87 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 40);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileMenuOpen]);
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/85 backdrop-blur-xl border-b border-border/50 py-3 shadow-sm"
-          : "bg-transparent py-5"
+          ? "py-3 border-b border-white/5"
+          : "py-6 bg-transparent"
       }`}
+      style={isScrolled ? { background: "hsla(222, 38%, 8%, 0.85)", backdropFilter: "blur(20px)" } : {}}
     >
-      <div className="container mx-auto px-6 md:px-12 flex items-center justify-end">
-        <nav className="hidden md:flex items-center gap-7">
+      <div className="container mx-auto px-5 md:px-12 flex items-center justify-between">
+        {/* Logo */}
+        <a
+          href="#hero"
+          className="text-white font-display font-bold text-lg tracking-tight hover:text-[hsl(36,88%,52%)] transition-colors duration-300"
+        >
+          Opeyemi
+        </a>
+
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+              className="text-[11px] font-sans font-medium text-white/60 hover:text-white transition-colors duration-300 tracking-[0.18em] relative group"
             >
               {link.name}
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[hsl(36,88%,52%)] group-hover:w-full transition-all duration-300" />
             </a>
           ))}
-          <div className="w-px h-5 bg-border mx-1" />
-          <ThemeToggle />
         </nav>
 
-        <div className="flex md:hidden items-center gap-3">
-          <ThemeToggle />
-          <button
-            className="text-foreground p-2 -mr-2 rounded-lg hover:bg-muted transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            data-testid="mobile-menu-toggle"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
+        {/* Mobile hamburger */}
+        <button
+          className="flex md:hidden text-white/70 hover:text-white p-2 transition-colors z-[60]"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          data-testid="mobile-menu-toggle"
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </div>
 
+      {/* Full-screen mobile menu overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-b border-border bg-background/95 backdrop-blur-xl overflow-hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden fixed inset-0 z-50 flex flex-col items-center justify-center"
+            style={{ background: "hsla(222, 38%, 6%, 0.97)", backdropFilter: "blur(24px)" }}
           >
-            <div className="container mx-auto px-6 py-6 flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <a
+            <nav className="flex flex-col items-center gap-8">
+              {navLinks.map((link, i) => (
+                <motion.a
                   key={link.name}
                   href={link.href}
-                  className="text-base font-medium text-foreground py-3 px-3 rounded-lg hover:bg-muted hover:text-primary transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.07, duration: 0.3 }}
+                  className="font-display font-bold text-3xl text-white/80 hover:text-[hsl(36,88%,52%)] tracking-[0.1em] transition-colors duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
-                </a>
+                </motion.a>
               ))}
-            </div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>

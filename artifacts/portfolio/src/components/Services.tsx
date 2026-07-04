@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Monitor, Rocket, User, RefreshCw, BrainCircuit } from "lucide-react";
+import { Monitor, Rocket, User, RefreshCw, BrainCircuit, Code2 } from "lucide-react";
 
 const services = [
   {
@@ -33,17 +33,28 @@ const services = [
   {
     title: "AI-Assisted Development",
     description:
-      "Combining AI-powered tools with expert frontend skills to deliver high-quality websites in record time — at competitive rates.",
+      "Combining AI-powered tools with expert frontend skills to deliver high-quality websites in record time.",
     icon: BrainCircuit,
     highlight: true,
+  },
+  {
+    title: "Full-Stack Development",
+    description:
+      "End-to-end web apps built with React, Node.js, and Supabase. From idea to deployed product.",
+    icon: Code2,
+    highlight: false,
   },
 ];
 
 export function Services() {
   return (
-    <section id="services" data-testid="services-section" className="py-24 md:py-32 relative bg-muted/20">
+    <section id="services" data-testid="services-section" className="py-16 md:py-20 relative">
+      {/* Warm amber/gold radial background glow — distinct from Skills blue glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute left-0 bottom-0 w-[600px] h-[400px] bg-primary/5 rounded-full blur-[120px]" />
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full blur-[160px]"
+          style={{ background: "radial-gradient(ellipse, hsla(36,88%,52%,0.09) 0%, transparent 70%)" }}
+        />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -54,71 +65,82 @@ export function Services() {
           transition={{ duration: 0.5 }}
           className="max-w-5xl mx-auto"
         >
+          {/* Section label */}
           <div className="flex items-center gap-4 mb-6">
-            <span className="text-primary font-mono text-sm tracking-widest uppercase">05. Services</span>
-            <div className="h-px bg-border flex-1" />
+            <span className="font-sans text-[hsl(36,88%,52%)] text-[10px] tracking-[0.25em] uppercase">
+              05 — Services
+            </span>
+            <div className="h-px bg-white/8 flex-1" />
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">What I Offer</h2>
-          <p className="text-lg text-muted-foreground mb-16 max-w-xl">
+          <h2 className="font-display font-bold tracking-tight text-3xl md:text-5xl text-white mb-4">
+            What I Offer
+          </h2>
+          <p className="font-sans text-white/45 text-lg mb-16 max-w-xl">
             End-to-end web development services tailored to help your business stand out and grow online.
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {/* 3 + 3 card grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className={`group relative p-8 rounded-2xl border overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                  service.highlight
-                    ? "bg-primary/5 border-primary/30 hover:border-primary/60 hover:shadow-primary/10"
-                    : "bg-card border-card-border hover:border-primary/40 hover:shadow-primary/5"
-                }`}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="services-card group relative overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                style={{ padding: "32px", borderRadius: "16px" }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                {/* Popular badge */}
+                {service.highlight && (
+                  <span
+                    className="absolute top-4 right-4 font-sans text-[10px] font-semibold tracking-[0.12em] uppercase px-3 py-1 rounded-full"
+                    style={{
+                      background: "hsl(36,88%,52%)",
+                      color: "#0d0d0d",
+                    }}
+                  >
+                    Popular
+                  </span>
+                )}
+
+                {/* Gold top-border accent — animates in on hover via CSS */}
+                <div className="services-card__top-border" />
 
                 <div className="relative z-10">
-                  {service.highlight && (
-                    <span className="absolute top-0 right-6 -translate-y-3 text-xs font-mono bg-primary text-primary-foreground px-3 py-1 rounded-full">
-                      Popular
-                    </span>
-                  )}
+                  {/* Icon container with gold tint */}
                   <div
-                    className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 ${
-                      service.highlight
-                        ? "bg-primary/20 text-primary group-hover:bg-primary group-hover:text-primary-foreground"
-                        : "bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground"
-                    }`}
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110"
+                    style={{ background: "rgba(232,160,32,0.10)", color: "hsl(36,88%,52%)" }}
                   >
-                    <service.icon size={26} />
+                    <service.icon size={22} />
                   </div>
 
-                  <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
-                    {service.description}
-                  </p>
+                  <h3 className="font-display font-bold text-white text-lg mb-3">{service.title}</h3>
+                  <p className="font-sans text-white/45 leading-relaxed text-sm">{service.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
 
+          {/* CTA row */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-12 p-8 rounded-2xl bg-card border border-card-border text-center"
+            transition={{ duration: 0.5, delay: 0.35 }}
+            className="mt-12 flex items-center justify-center gap-5 flex-wrap"
           >
-            <p className="text-muted-foreground mb-2">Not sure what you need?</p>
-            <p className="text-foreground font-medium">
-              Let's talk — I'll help you figure out the best solution for your project.{" "}
-              <a href="#contact" className="text-primary hover:underline underline-offset-4">
-                Get in touch
-              </a>
+            <p className="font-sans text-white/60 text-base">
+              Need something custom? Let's talk.
             </p>
+            <a
+              href="#contact"
+              className="font-sans font-semibold text-sm tracking-wide transition-all duration-300 services-cta-btn"
+            >
+              Get a Quote
+            </a>
           </motion.div>
         </motion.div>
       </div>

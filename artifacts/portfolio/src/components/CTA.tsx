@@ -1,20 +1,13 @@
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export function CTA() {
   return (
-    <section data-testid="cta-section" className="py-24 md:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-primary/10 rounded-full blur-[100px]" />
-        <div
-          className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
+    <section data-testid="cta-section" className="py-16 md:py-20 relative overflow-hidden">
+      {/* Big centred glow */}
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+        <div className="w-[800px] h-[400px] rounded-full blur-[120px]"
+          style={{ background: "hsla(36,88%,52%,0.07)" }} />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -30,49 +23,64 @@ export function CTA() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary font-medium text-sm mb-8 border border-primary/20"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border font-sans text-xs tracking-[0.15em] mb-8"
+            style={{
+              background: "hsla(36,88%,52%,0.08)",
+              borderColor: "hsla(36,88%,52%,0.2)",
+              color: "hsl(36,88%,52%)",
+            }}
           >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Available for new projects
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            AVAILABLE FOR NEW PROJECTS
           </motion.div>
 
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
+          <h2 className="font-display font-bold tracking-tight text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
             Let's Build Something{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-violet-400 to-primary">
+            <span className="serif-italic font-normal" style={{ color: "hsl(36,88%,52%)", textShadow: "0 0 40px hsla(36,88%,52%,0.3)" }}>
               Great Together
             </span>
           </h2>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-xl mx-auto leading-relaxed">
-            Whether you're starting from scratch or need to level up an existing site, I'd love to hear about your project and see how I can help.
+          <p className="font-sans text-white/45 text-lg md:text-xl mb-12 max-w-xl mx-auto leading-relaxed">
+            Whether you're starting from scratch or need to level up an existing site, I'd love to hear about your project.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="w-full sm:w-auto h-14 px-10 text-base group shadow-lg shadow-primary/25 hover:shadow-primary/35 transition-shadow" asChild>
-              <a href="mailto:adetayo@email.com">
-                Start a Project
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-10 text-base group" asChild>
-              <a href="https://wa.me/2341234567890" target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 w-4 h-4 group-hover:scale-110 transition-transform" />
-                Chat on WhatsApp
-              </a>
-            </Button>
+            <a
+              href="mailto:adetayoopeyemi8@gmail.com"
+              className="group inline-flex items-center gap-3 px-10 py-4 rounded-full font-sans font-semibold text-sm tracking-wide transition-all duration-300"
+              style={{
+                background: "hsl(36,88%,52%)",
+                color: "hsl(222,38%,8%)",
+                boxShadow: "0 0 30px hsla(36,88%,52%,0.35)",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 0 55px hsla(36,88%,52%,0.55)")}
+              onMouseLeave={e => (e.currentTarget.style.boxShadow = "0 0 30px hsla(36,88%,52%,0.35)")}
+            >
+              Start a Project
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="https://wa.me/2348163657206"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-10 py-4 rounded-full font-sans font-semibold text-sm tracking-wide text-white/70 border border-white/10 hover:border-white/25 hover:text-white transition-all duration-300 glass-card"
+            >
+              Chat on WhatsApp
+            </a>
           </div>
 
-          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-muted-foreground">
+          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 font-sans text-sm text-white/35">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               Fast turnaround
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: "hsl(36,88%,52%)" }} />
               Mobile-responsive
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
               AI-accelerated builds
             </div>
           </div>

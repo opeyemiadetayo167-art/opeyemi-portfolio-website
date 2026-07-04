@@ -18,14 +18,15 @@ export function Footer() {
   ];
 
   return (
-    <footer data-testid="footer" className="py-8 border-t border-border bg-background">
+    <footer data-testid="footer" className="py-8 border-t"
+      style={{ borderColor: "hsla(210,30%,96%,0.06)" }}>
       <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex flex-col items-center md:items-start gap-1">
-          <p className="text-sm text-muted-foreground">
+          <p className="font-sans text-sm text-white/30">
             © {currentYear} Opeyemi Adetayo. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground/60">
-            Designed &amp; built with React, Tailwind CSS &amp; AI tools.
+          <p className="font-sans text-xs text-white/18">
+            Designed & built with React, Tailwind CSS & AI tools.
           </p>
         </div>
 
@@ -37,7 +38,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="text-muted-foreground hover:text-primary transition-colors p-2.5 rounded-lg hover:bg-muted"
+              className="text-white/30 hover:text-[hsl(36,88%,52%)] transition-colors p-2.5 rounded-lg hover:bg-white/5"
             >
               <Icon size={18} />
             </a>

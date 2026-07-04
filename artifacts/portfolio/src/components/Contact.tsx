@@ -10,7 +10,9 @@ const contacts = [
     subtext: "Best for project inquiries",
     Icon: Mail,
     href: "mailto:opeyemiadetayo167@gmail.com",
-    colorClasses: "group-hover:text-rose-400 group-hover:border-rose-400/30 group-hover:bg-rose-400/5",
+    iconColor: "hsl(36,88%,52%)",
+    hoverBg: "rgba(232,160,32,0.08)",
+    hoverBorder: "rgba(232,160,32,0.3)",
   },
   {
     name: "WhatsApp",
@@ -18,7 +20,9 @@ const contacts = [
     subtext: "Quick responses",
     Icon: MessageCircle,
     href: "https://wa.me/2348163657206",
-    colorClasses: "group-hover:text-green-400 group-hover:border-green-400/30 group-hover:bg-green-400/5",
+    iconColor: "hsl(36,88%,52%)",
+    hoverBg: "rgba(232,160,32,0.08)",
+    hoverBorder: "rgba(232,160,32,0.3)",
   },
   {
     name: "Upwork",
@@ -26,7 +30,9 @@ const contacts = [
     subtext: "Verified freelancer",
     Icon: SiUpwork,
     href: "https://www.upwork.com/freelancers/~0126213fc8bb196fc4?companyReference=2046389435861582425&mp_source=share",
-    colorClasses: "group-hover:text-emerald-400 group-hover:border-emerald-400/30 group-hover:bg-emerald-400/5",
+    iconColor: "hsl(36,88%,52%)",
+    hoverBg: "rgba(232,160,32,0.08)",
+    hoverBorder: "rgba(232,160,32,0.3)",
   },
   {
     name: "LinkedIn",
@@ -34,15 +40,24 @@ const contacts = [
     subtext: "Professional network",
     Icon: Linkedin,
     href: "https://linkedin.com",
-    colorClasses: "group-hover:text-blue-400 group-hover:border-blue-400/30 group-hover:bg-blue-400/5",
+    iconColor: "hsl(36,88%,52%)",
+    hoverBg: "rgba(232,160,32,0.08)",
+    hoverBorder: "rgba(232,160,32,0.3)",
   },
 ];
 
 export function Contact() {
   return (
-    <section id="contact" data-testid="contact-section" className="py-24 md:py-32 relative">
+    <section id="contact" data-testid="contact-section" className="pt-16 md:pt-20 pb-8 md:pb-10 relative">
+      {/* Deep purple/violet radial glow — distinct from other sections */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[700px] h-[300px] bg-primary/8 rounded-full blur-[120px]" />
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full blur-[160px]"
+          style={{
+            background:
+              "radial-gradient(ellipse, hsla(270,70%,50%,0.10) 0%, transparent 70%)",
+          }}
+        />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -51,55 +66,81 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-6xl mx-auto"
         >
-          <div className="flex items-center gap-4 mb-6">
-            <span className="text-primary font-mono text-sm tracking-widest uppercase">06. Contact</span>
-            <div className="h-px bg-border flex-1" />
-          </div>
+          {/* Two-column layout */}
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
 
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">Get In Touch</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Have a project in mind or just want to chat? I'm always open to discussing new opportunities, interesting ideas, and how I can help bring your vision to life.
-            </p>
-          </div>
+            {/* ── Left column (55%) ── */}
+            <div className="w-full lg:w-[55%] self-start">
+              {/* Section label */}
+              <div className="flex items-center gap-4 mb-6">
+                <span className="font-sans text-[hsl(36,88%,52%)] text-[10px] tracking-[0.25em] uppercase">
+                  06 — Contact
+                </span>
+                <div className="h-px bg-white/8 flex-1" />
+              </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            {contacts.map((contact, index) => {
-              const IconComponent = contact.Icon;
-              return (
-                <motion.a
-                  key={contact.name}
-                  href={contact.href}
-                  target={contact.href.startsWith("mailto") ? "_self" : "_blank"}
-                  rel="noopener noreferrer"
-                  data-testid={`contact-${contact.name.toLowerCase()}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  whileHover={{ y: -4 }}
-                  className={`group p-6 rounded-2xl bg-card border border-card-border transition-all duration-300 flex flex-col items-center gap-4 text-center shadow-sm hover:shadow-lg ${contact.colorClasses}`}
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-muted text-muted-foreground flex items-center justify-center transition-all duration-300 group-hover:scale-110 border border-transparent group-hover:border-current">
-                    <IconComponent size={22} />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground text-sm">{contact.name}</h3>
-                    <p className="text-xs text-muted-foreground mt-0.5 truncate max-w-[130px]">{contact.value}</p>
-                    <p className="text-xs text-muted-foreground/60 mt-1">{contact.subtext}</p>
-                  </div>
-                </motion.a>
-              );
-            })}
-          </div>
+              <h2 className="font-display font-bold tracking-tight text-3xl md:text-5xl text-white mb-4">
+                Get In Touch
+              </h2>
+              <p className="font-sans text-white/45 text-base leading-relaxed mb-10 max-w-md">
+                Have a project in mind or just want to chat? I'm always open to discussing new opportunities and how I can help bring your vision to life.
+              </p>
 
-          <div className="mt-4">
-            <div className="text-center mb-8">
-              <p className="text-muted-foreground text-sm">Or send a message directly — I'll reply within 24 hours.</p>
+              {/* 2×2 contact card grid */}
+              <div className="grid grid-cols-2 gap-3">
+                {contacts.map((contact, index) => {
+                  const IconComponent = contact.Icon;
+                  return (
+                    <motion.a
+                      key={contact.name}
+                      href={contact.href}
+                      target={contact.href.startsWith("mailto") ? "_self" : "_blank"}
+                      rel="noopener noreferrer"
+                      data-testid={`contact-${contact.name.toLowerCase()}`}
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: index * 0.08 }}
+                      whileHover={{ y: -3 }}
+                      className="contact-card group flex items-center gap-3 p-4 rounded-2xl transition-all duration-300"
+                    >
+                      {/* Gold icon container */}
+                      <div
+                        className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                        style={{
+                          background: "rgba(232,160,32,0.10)",
+                          color: "hsl(36,88%,52%)",
+                        }}
+                      >
+                        <IconComponent size={18} />
+                      </div>
+
+                      <div className="min-w-0">
+                        <h3 className="font-display font-bold text-white text-sm leading-tight">
+                          {contact.name}
+                        </h3>
+                        <p className="font-sans text-xs text-white/35 mt-0.5 truncate">
+                          {contact.subtext}
+                        </p>
+                      </div>
+                    </motion.a>
+                  );
+                })}
+              </div>
             </div>
-            <ContactForm />
+
+            {/* ── Right column (45%) ── */}
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="w-full lg:w-[45%]"
+            >
+              <ContactForm />
+            </motion.div>
           </div>
         </motion.div>
       </div>

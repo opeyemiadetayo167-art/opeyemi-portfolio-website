@@ -40,9 +40,10 @@ const milestones = [
 
 export function Journey() {
   return (
-    <section id="journey" data-testid="journey-section" className="py-24 md:py-32 relative bg-muted/20">
+    <section id="journey" data-testid="journey-section" className="py-16 md:py-20 relative">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute right-0 top-1/3 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
+        <div className="absolute right-0 top-1/3 w-[500px] h-[500px] rounded-full blur-[120px]"
+          style={{ background: "hsla(220,80%,40%,0.07)" }} />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -54,21 +55,21 @@ export function Journey() {
           className="max-w-4xl mx-auto"
         >
           <div className="flex items-center gap-4 mb-6">
-            <span className="text-primary font-mono text-sm tracking-widest uppercase">02. Journey</span>
-            <div className="h-px bg-border flex-1" />
+            <span className="font-sans text-[hsl(36,88%,52%)] text-[10px] tracking-[0.25em] uppercase">02 — Journey</span>
+            <div className="h-px bg-white/8 flex-1" />
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-            My Story
-          </h2>
-          <p className="text-lg text-muted-foreground mb-16 max-w-2xl">
+          <h2 className="font-display font-bold tracking-tight text-3xl md:text-5xl text-white mb-4">My Story</h2>
+          <p className="font-sans text-white/45 text-base md:text-lg mb-8 md:mb-16 max-w-2xl">
             From a curious teenager with a blank code editor to a freelance frontend developer building for real businesses — here's how it happened.
           </p>
 
           <div className="relative">
-            <div className="absolute left-[27px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-border to-transparent" />
+            {/* Vertical timeline line */}
+            <div className="absolute left-[27px] md:left-1/2 top-0 bottom-0 w-px"
+              style={{ background: "linear-gradient(to bottom, hsla(36,88%,52%,0.4), hsla(36,88%,52%,0.1), transparent)" }} />
 
-            <div className="space-y-12">
+            <div className="space-y-3">
               {milestones.map((milestone, index) => (
                 <motion.div
                   key={milestone.title}
@@ -82,26 +83,43 @@ export function Journey() {
                 >
                   <div
                     className={`w-full md:w-[calc(50%-2rem)] pl-16 md:pl-0 ${
-                      index % 2 === 0 ? "md:text-right md:pr-12" : "md:text-left md:pl-12"
+                      index % 2 === 0 ? "md:pr-12" : "md:pl-12"
                     }`}
                   >
                     <motion.div
                       whileHover={{ scale: 1.02 }}
-                      className="inline-block p-6 rounded-2xl bg-card border border-card-border hover:border-primary/40 transition-all hover:shadow-lg hover:shadow-primary/5 w-full"
+                      className="inline-block py-5 px-6 rounded-2xl glass-card transition-all duration-300 w-full"
                     >
-                      <div className={`flex items-center gap-3 mb-3 ${index % 2 === 0 ? "md:justify-end" : "justify-start"}`}>
-                        <span className="text-xs font-mono bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span
+                          className="font-sans text-[10px] tracking-[0.12em] uppercase px-3 py-1 rounded-full"
+                          style={{
+                            background: "hsla(36,88%,52%,0.1)",
+                            color: "hsl(36,88%,52%)",
+                            border: "1px solid hsla(36,88%,52%,0.2)",
+                          }}
+                        >
                           {milestone.tag}
                         </span>
-                        <span className="text-xs font-mono text-muted-foreground">{milestone.year}</span>
+                        <span className="font-sans text-xs text-white/30">{milestone.year}</span>
                       </div>
-                      <h3 className="text-xl font-bold text-foreground mb-2">{milestone.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{milestone.description}</p>
+                      <h3 className="font-display font-bold text-white text-xl mb-2">{milestone.title}</h3>
+                      <p className="font-sans text-white/45 text-sm leading-relaxed">{milestone.description}</p>
                     </motion.div>
                   </div>
 
-                  <div className="absolute left-0 md:relative md:left-auto flex-shrink-0 w-14 h-14 rounded-full bg-background border-2 border-primary flex items-center justify-center shadow-lg shadow-primary/20 z-10">
-                    <span className="text-primary font-bold text-sm font-mono">{String(index + 1).padStart(2, "0")}</span>
+                  {/* Node */}
+                  <div
+                    className="absolute left-0 md:relative md:left-auto flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center z-10"
+                    style={{
+                      background: "hsl(222,38%,8%)",
+                      border: "2px solid hsl(36,88%,52%)",
+                      boxShadow: "0 0 20px hsla(36,88%,52%,0.25)",
+                    }}
+                  >
+                    <span className="font-display font-bold text-sm" style={{ color: "hsl(36,88%,52%)" }}>
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
                   </div>
 
                   <div className="hidden md:block w-[calc(50%-2rem)]" />

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -22,26 +22,24 @@
 
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-primary-border: var(--primary-border);
 
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-secondary-border: var(--secondary-border);
 
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-muted-border: var(--muted-border);
 
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-accent-border: var(--accent-border);
 
   --color-destructive: hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-destructive-border: var(--destructive-border);
+
+  --color-gold: hsl(var(--gold));
 
   --font-sans: var(--app-font-sans);
   --font-display: var(--app-font-display);
+  --font-serif: var(--app-font-serif);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -49,107 +47,75 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* ── Default (dark) ─────────────────────────────────────────── */
+/* ── Design System — Dark Luxury ─────────────────────── */
 :root {
-  /* Neo navy — clearly dark but visibly blue, not black */
-  --background: 222 44% 11%;
-  --foreground: 213 40% 94%;
+  /* Deep charcoal navy */
+  --background: 222 38% 8%;
+  --foreground: 210 30% 96%;
 
-  --card: 222 40% 15%;
-  --card-foreground: 213 40% 94%;
-  --card-border: 220 35% 22%;
+  /* Glass cards */
+  --card: 220 32% 11%;
+  --card-foreground: 210 30% 96%;
+  --card-border: 220 25% 18%;
 
-  --popover: 223 45% 8%;
-  --popover-foreground: 213 40% 94%;
-  --popover-border: 222 38% 14%;
+  --popover: 222 38% 8%;
+  --popover-foreground: 210 30% 96%;
+  --popover-border: 220 25% 18%;
 
-  /* Electric cobalt-blue primary */
-  --primary: 217 91% 60%;
-  --primary-foreground: 224 50% 5%;
+  /* Gold accent */
+  --primary: 36 88% 52%;
+  --primary-foreground: 222 38% 8%;
+  --gold: 36 88% 52%;
 
-  --secondary: 222 38% 18%;
-  --secondary-foreground: 213 40% 94%;
+  --secondary: 220 28% 14%;
+  --secondary-foreground: 210 30% 96%;
 
-  --muted: 222 38% 18%;
-  --muted-foreground: 215 20% 62%;
+  --muted: 220 28% 14%;
+  --muted-foreground: 215 16% 55%;
 
-  --accent: 217 91% 60%;
-  --accent-foreground: 222 44% 11%;
+  --accent: 36 88% 52%;
+  --accent-foreground: 222 38% 8%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 220 35% 22%;
-  --input: 220 35% 22%;
-  --ring: 217 91% 60%;
+  --border: 220 25% 18%;
+  --input: 220 25% 18%;
+  --ring: 36 88% 52%;
 
   --radius: 0.75rem;
-  --app-font-sans: 'Space Grotesk', sans-serif;
+  --app-font-sans: 'DM Sans', sans-serif;
   --app-font-display: 'Syne', sans-serif;
+  --app-font-serif: 'Playfair Display', serif;
 
-  /* Glow values */
-  --neon-glow: 0 0 24px hsla(217, 91%, 60%, 0.55),
-               0 0 60px hsla(217, 91%, 60%, 0.22),
-               0 0 100px hsla(217, 91%, 60%, 0.1);
-  --neon-glow-sm: 0 0 10px hsla(217, 91%, 60%, 0.55),
-                  0 0 24px hsla(217, 91%, 60%, 0.25);
+  --gold-glow: 0 0 30px hsla(36, 88%, 52%, 0.35), 0 0 70px hsla(36, 88%, 52%, 0.12);
+  --gold-glow-sm: 0 0 12px hsla(36, 88%, 52%, 0.4), 0 0 28px hsla(36, 88%, 52%, 0.18);
+  --glass-bg: hsla(220, 32%, 11%, 0.65);
+  --glass-border: hsla(210, 30%, 96%, 0.08);
 }
 
-/* ── Light mode override ────────────────────────────────────── */
-.light {
-  --background: 216 30% 97%;
-  --foreground: 220 40% 8%;
-  --card: 0 0% 100%;
-  --card-foreground: 220 40% 8%;
-  --card-border: 215 25% 88%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 220 40% 8%;
-  --popover-border: 215 25% 88%;
-  --primary: 217 91% 54%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 214 20% 92%;
-  --secondary-foreground: 220 40% 10%;
-  --muted: 214 20% 92%;
-  --muted-foreground: 215 16% 47%;
-  --accent: 217 91% 54%;
-  --accent-foreground: 0 0% 100%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 100%;
-  --border: 215 25% 88%;
-  --input: 215 25% 88%;
-  --ring: 217 91% 54%;
-  --neon-glow: 0 0 20px hsla(217, 91%, 54%, 0.3), 0 0 40px hsla(217, 91%, 54%, 0.12);
-  --neon-glow-sm: 0 0 10px hsla(217, 91%, 54%, 0.35);
-}
-
-/* Also keep .dark selector in sync for next-themes compatibility */
+/* Force dark — no light mode toggle */
 .dark {
-  --background: 222 44% 11%;
-  --foreground: 213 40% 94%;
-  --card: 222 40% 15%;
-  --card-foreground: 213 40% 94%;
-  --card-border: 220 35% 22%;
-  --popover: 222 40% 15%;
-  --popover-foreground: 213 40% 94%;
-  --popover-border: 220 35% 22%;
-  --primary: 217 91% 60%;
-  --primary-foreground: 222 44% 11%;
-  --secondary: 222 38% 18%;
-  --secondary-foreground: 213 40% 94%;
-  --muted: 222 38% 18%;
-  --muted-foreground: 215 20% 62%;
-  --accent: 217 91% 60%;
-  --accent-foreground: 222 44% 11%;
+  --background: 222 38% 8%;
+  --foreground: 210 30% 96%;
+  --card: 220 32% 11%;
+  --card-foreground: 210 30% 96%;
+  --card-border: 220 25% 18%;
+  --popover: 222 38% 8%;
+  --popover-foreground: 210 30% 96%;
+  --primary: 36 88% 52%;
+  --primary-foreground: 222 38% 8%;
+  --secondary: 220 28% 14%;
+  --secondary-foreground: 210 30% 96%;
+  --muted: 220 28% 14%;
+  --muted-foreground: 215 16% 55%;
+  --accent: 36 88% 52%;
+  --accent-foreground: 222 38% 8%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  --border: 220 35% 22%;
-  --input: 220 35% 22%;
-  --ring: 217 91% 60%;
-  --neon-glow: 0 0 24px hsla(217, 91%, 60%, 0.55),
-               0 0 60px hsla(217, 91%, 60%, 0.22),
-               0 0 100px hsla(217, 91%, 60%, 0.1);
-  --neon-glow-sm: 0 0 10px hsla(217, 91%, 60%, 0.55),
-                  0 0 24px hsla(217, 91%, 60%, 0.25);
+  --border: 220 25% 18%;
+  --input: 220 25% 18%;
+  --ring: 36 88% 52%;
 }
 
 @layer base {
@@ -159,45 +125,314 @@
   body {
     @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
     background-image:
-      radial-gradient(ellipse 90% 55% at 50% -5%, hsla(217, 91%, 60%, 0.22) 0%, transparent 65%),
-      radial-gradient(ellipse 60% 40% at 85% 105%, hsla(200, 100%, 55%, 0.14) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 30% at 10% 80%, hsla(230, 80%, 55%, 0.09) 0%, transparent 60%);
+      radial-gradient(ellipse 80% 60% at 60% -10%, hsla(220, 80%, 40%, 0.22) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 5% 80%, hsla(36, 88%, 52%, 0.07) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 35% at 95% 95%, hsla(220, 80%, 40%, 0.1) 0%, transparent 55%);
+  }
+  /* Grain texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
   }
   html {
     scroll-behavior: smooth;
   }
-  h1, h2, h3 {
+  h1, h2, h3, h4 {
     font-family: var(--app-font-display);
+    letter-spacing: -0.02em;
   }
 }
 
-/* ── Neo grid ───────────────────────────────────────────────── */
-.neo-grid {
-  background-image:
-    linear-gradient(hsla(217, 91%, 65%, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, hsla(217, 91%, 65%, 0.1) 1px, transparent 1px);
-  background-size: 44px 44px;
+/* ── Glass card ─────────────────────────────────────── */
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
-/* ── Neon utilities ─────────────────────────────────────────── */
+.glass-card:hover {
+  border-color: hsla(36, 88%, 52%, 0.25);
+  box-shadow: 0 0 40px hsla(36, 88%, 52%, 0.08), 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* ── Services section cards ──────────────────────────── */
+.services-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Top gold border accent — hidden by default, slides in on hover */
+.services-card__top-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #E8A020;
+  border-radius: 16px 16px 0 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 20;
+}
+
+.services-card:hover .services-card__top-border {
+  transform: scaleX(1);
+}
+
+.services-card:hover {
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Services CTA button ─────────────────────────────── */
+.services-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 22px;
+  border-radius: 9999px;
+  border: 1px solid hsl(36, 88%, 52%);
+  color: hsl(36, 88%, 52%);
+  background: transparent;
+  text-decoration: none;
+}
+
+.services-cta-btn:hover {
+  background: hsla(36, 88%, 52%, 0.1);
+  box-shadow: 0 0 18px hsla(36, 88%, 52%, 0.2);
+  color: hsl(36, 88%, 62%);
+}
+
+/* ── Projects section cards ──────────────────────────── */
+.project-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid #E8A020;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.12), 0 8px 40px rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.12);
+  border-left-color: #E8A020;
+}
+
+/* Gold filled button */
+.project-btn-primary {
+  background: hsl(36, 88%, 52%);
+  color: #0d0d0d;
+}
+
+.project-btn-primary:hover {
+  background: hsl(36, 88%, 60%);
+  box-shadow: 0 0 24px hsla(36, 88%, 52%, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Gold outlined button */
+.project-btn-outline {
+  background: transparent;
+  color: hsl(36, 88%, 52%);
+  border: 1px solid hsl(36, 88%, 52%);
+}
+
+.project-btn-outline:hover {
+  background: hsla(36, 88%, 52%, 0.10);
+  box-shadow: 0 0 18px hsla(36, 88%, 52%, 0.2);
+  transform: translateY(-1px);
+}
+
+/* ── About section stat cards ────────────────────────── */
+
+.about-stat-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.about-stat-card:hover {
+  background: rgba(232, 160, 32, 0.05);
+  border-color: rgba(232, 160, 32, 0.22);
+  box-shadow: 0 0 24px rgba(232, 160, 32, 0.08);
+}
+
+/* ── Contact section ─────────────────────────────────── */
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.contact-card:hover {
+  background: rgba(232, 160, 32, 0.06);
+  border-color: rgba(232, 160, 32, 0.28);
+  box-shadow: 0 0 24px rgba(232, 160, 32, 0.10);
+}
+
+.contact-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  color: #fff;
+}
+
+.contact-input:focus {
+  border-color: rgba(232, 160, 32, 0.5);
+  box-shadow: 0 0 0 3px rgba(232, 160, 32, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.contact-input::placeholder {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+/* Select — override browser defaults on dark bg */
+.contact-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.35)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 38px;
+  cursor: pointer;
+}
+
+.contact-select option {
+  background: #111827;
+  color: #fff;
+}
+
+/* Gold submit button */
+.contact-submit-btn {
+  background: hsl(36, 88%, 52%);
+  color: #0d0d0d;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-submit-btn:hover:not(:disabled) {
+  background: hsl(36, 88%, 60%);
+  box-shadow: 0 0 28px hsla(36, 88%, 52%, 0.35);
+  transform: translateY(-1px);
+}
+
+.contact-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Gold glow utilities ─────────────────────────────── */
 @layer utilities {
-  .neon-glow    { box-shadow: var(--neon-glow); }
-  .neon-glow-sm { box-shadow: var(--neon-glow-sm); }
-  .neon-text    { text-shadow: 0 0 12px currentColor, 0 0 36px currentColor; }
-  .neon-border  {
-    border-color: hsl(var(--primary));
-    box-shadow: 0 0 8px hsla(var(--primary), 0.45),
-                inset 0 0 8px hsla(var(--primary), 0.08);
+  .gold-glow    { box-shadow: var(--gold-glow); }
+  .gold-glow-sm { box-shadow: var(--gold-glow-sm); }
+  .gold-text    { color: hsl(var(--gold)); }
+  .gold-text-glow { color: hsl(var(--gold)); text-shadow: 0 0 20px hsla(36, 88%, 52%, 0.5), 0 0 50px hsla(36, 88%, 52%, 0.2); }
+  .serif-italic { font-family: var(--app-font-serif); font-style: italic; }
+  .font-display { font-family: var(--app-font-display); }
+}
+
+/* ── Subtle grid ─────────────────────────────────────── */
+.subtle-grid {
+  background-image:
+    linear-gradient(hsla(210, 30%, 96%, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, hsla(210, 30%, 96%, 0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── Prismatic orb ───────────────────────────────────── */
+.prism-orb {
+  background: radial-gradient(circle at 35% 35%,
+    hsla(36, 88%, 80%, 0.22) 0%,
+    hsla(200, 80%, 70%, 0.14) 30%,
+    hsla(280, 80%, 70%, 0.08) 55%,
+    hsla(36, 88%, 52%, 0.04) 75%,
+    transparent 100%
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid hsla(210, 30%, 96%, 0.1);
+}
+
+/* ── Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: hsl(var(--background)); }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary)); }
+
+/* ── Mobile responsiveness (max 767px) ───────────────── */
+@media (max-width: 767px) {
+
+  /* Consistent horizontal padding across all sections */
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
-  /* Glowing cards */
-  .card-glow {
-    background: hsl(var(--card));
-    border: 1px solid hsl(var(--card-border));
-    transition: border-color 0.25s, box-shadow 0.25s;
+
+  /* Project card image: 220px on mobile, stacks above info */
+  .project-img-container {
+    height: 220px;
   }
-  .card-glow:hover {
-    border-color: hsl(var(--primary) / 0.5);
-    box-shadow: 0 0 20px hsla(217, 91%, 60%, 0.18),
-                0 8px 32px hsla(217, 91%, 60%, 0.08);
+
+  /* Services: single column */
+  #services .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* About: stack columns */
+  #about .flex.lg\\:flex-row {
+    flex-direction: column !important;
+  }
+  #about .lg\\:w-1\\/2 {
+    width: 100% !important;
+  }
+
+  /* Contact: stack columns */
+  #contact .lg\\:flex-row {
+    flex-direction: column !important;
+  }
+  #contact .lg\\:w-\\[55\\%\\],
+  #contact .lg\\:w-\\[45\\%\\] {
+    width: 100% !important;
+  }
+
+  /* Journey: left-aligned on mobile already handled in component */
+
+  /* Section headings scale */
+  h2.font-display {
+    font-size: clamp(1.85rem, 7vw, 2.25rem) !important;
+  }
+
+  /* Skills stats: already grid-cols-1 on mobile via Tailwind */
+
+  /* Hero: ensure photo card doesn't overflow */
+  #hero .max-w-\\[280px\\] {
+    max-width: 260px;
   }
 }
+
+/* Project card image height: default mobile then md override */
+.project-img-container {
+  height: 320px;
+}
+
+@media (max-width: 767px) {
+  .project-img-container {
+    height: 220px;
+  }
+}
+
