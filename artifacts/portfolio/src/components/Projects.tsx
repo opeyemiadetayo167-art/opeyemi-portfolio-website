@@ -31,7 +31,7 @@ const projects: Project[] = [
     ],
     problem:
       "BenFit Gym needed a professional, highly visible online portal that could showcase their extensive premium offerings and capture enquiries from prospective members near UNILAG, Bariga.",
-    demo: "https://www.benfitgym.com",
+    demo: null,
     github: null,
   },
   {

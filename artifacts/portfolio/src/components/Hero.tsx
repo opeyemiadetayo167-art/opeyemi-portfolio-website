@@ -228,16 +228,16 @@ export function Hero() {
                   border: "1px solid hsla(220,75%,65%,0.3)",
                   boxShadow:
                     "0 0 0 1px hsla(36,88%,52%,0.12), 0 30px 80px rgba(0,0,0,0.7), 0 0 55px hsla(220,80%,45%,0.2)",
-                  background: "hsla(222,35%,8%,0.8)",
+                  background: "linear-gradient(135deg, #0f1729 0%, #1a1f3a 100%)",
                   backdropFilter: "blur(6px)",
                 }}
               >
                 <img
-                  src="/opeyemi.png"
+                  src="/hero-photo.png"
                   alt="Opeyemi Adetayo"
                   className="w-full h-full object-cover"
                   style={{
-                    objectPosition: "center 5%",
+                    objectPosition: "center top",
                     filter: "contrast(1.03) brightness(0.97) saturate(0.9)",
                   }}
                 />
