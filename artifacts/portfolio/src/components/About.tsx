@@ -26,7 +26,7 @@ const stats = [
   },
 ];
 
-const techStack = ["React", "Tailwind CSS", "Framer Motion", "AI Tools", "Figma"];
+const techStack = ["React", "TypeScript", "Node.js", "Tailwind CSS", "Supabase", "Framer Motion", "Git", "Figma"];
 
 export function About() {
   return (
@@ -70,7 +70,7 @@ export function About() {
                 </h2>
                 <div className="space-y-4 font-sans text-white/55 leading-relaxed text-base">
                   <p>
-                    Hey, I'm <strong className="text-white">Opeyemi Adetayo</strong> — a 19-year-old Frontend Developer and AI Website Builder. I specialize in building responsive websites, high-converting landing pages, and modern UI experiences.
+                    Hey, I'm <strong className="text-white">Opeyemi Adetayo</strong> — a Full Stack Web Developer and AI Builder. I specialize in building responsive websites, web apps, and high-converting digital experiences from frontend to backend.
                   </p>
                   <p>
                     I leverage AI-assisted development tools to deliver professional, production-ready websites faster — without sacrificing quality or attention to detail.

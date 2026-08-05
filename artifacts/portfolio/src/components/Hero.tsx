@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 export function Hero() {
@@ -6,7 +6,7 @@ export function Hero() {
     <section
       id="hero"
       data-testid="hero-section"
-      className="relative min-h-screen overflow-hidden bg-background"
+      className="relative min-h-screen overflow-hidden bg-transparent"
     >
       {/* Grain */}
       <div
@@ -16,9 +16,6 @@ export function Hero() {
           backgroundRepeat: "repeat",
         }}
       />
-
-      {/* Grid */}
-      <div className="absolute inset-0 subtle-grid opacity-100 pointer-events-none z-0" />
 
       {/* Shimmer */}
       <motion.div
@@ -76,11 +73,11 @@ export function Hero() {
         />
       </div>
 
-      {/* ── Main: 60/40 grid, full-height, vertically centred ── */}
+      {/* ΓöÇΓöÇ Main: 60/40 grid, full-height, vertically centred ΓöÇΓöÇ */}
       <div className="relative z-20 min-h-screen flex items-center">
         <div className="w-full grid grid-cols-1 md:grid-cols-[60fr_40fr] items-center min-h-screen">
 
-          {/* ── LEFT: Text (60%) ── */}
+          {/* ΓöÇΓöÇ LEFT: Text (60%) ΓöÇΓöÇ */}
           <div className="flex flex-col justify-center px-5 md:pl-20 lg:pl-24 md:pr-6 pt-28 pb-10 md:py-0 overflow-hidden">
 
             {/* Status pill */}
@@ -95,25 +92,26 @@ export function Hero() {
               AVAILABLE FOR PROJECTS
             </motion.div>
 
-            {/* Headline — strictly inside left column */}
+            {/* Headline ΓÇö strictly inside left column */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
+              className="max-w-full"
             >
               {/* Line 1 */}
               <div
-                className="font-display font-extrabold text-white leading-[0.9]"
-                style={{ fontSize: "clamp(2rem, 8vw, 6.4rem)", letterSpacing: "-0.02em" }}
+                className="font-display font-extrabold text-white leading-[0.95] max-w-full"
+                style={{ fontSize: "clamp(1.75rem, 4.5vw, 3.5rem)", letterSpacing: "-0.02em" }}
               >
-                Frontend
+                Full stack
               </div>
 
               {/* Line 2 — italic gold, slightly smaller */}
               <div
-                className="serif-italic leading-[1.05]"
+                className="serif-italic leading-[1.05] max-w-full"
                 style={{
-                  fontSize: "clamp(1.7rem, 6.5vw, 5.2rem)",
+                  fontSize: "clamp(1.5rem, 3.8vw, 2.85rem)",
                   letterSpacing: "-0.01em",
                   color: "hsl(36,88%,52%)",
                   textShadow: "0 0 60px hsla(36,88%,52%,0.28)",
@@ -123,15 +121,15 @@ export function Hero() {
                   marginBottom: "0.06em",
                 }}
               >
-                developer
+                web
               </div>
 
               {/* Line 3 */}
               <div
-                className="font-display font-extrabold text-white leading-[0.9]"
-                style={{ fontSize: "clamp(2rem, 8vw, 6.0rem)", letterSpacing: "-0.02em" }}
+                className="font-display font-extrabold text-white leading-[0.95] max-w-full"
+                style={{ fontSize: "clamp(1.65rem, 4.2vw, 3.25rem)", letterSpacing: "-0.02em" }}
               >
-                & AI Builder
+                developer
               </div>
             </motion.div>
 
@@ -192,7 +190,7 @@ export function Hero() {
               className="flex flex-col gap-1 mt-10 items-center md:items-start"
             >
               <p className="font-sans text-white/25 text-[9px] tracking-[0.24em] uppercase">
-                Frontend / AI Tools / SaaS
+                Full Stack / Web Apps / SaaS
               </p>
               <p className="font-sans text-white/25 text-[9px] tracking-[0.24em] uppercase">
                 Based in Lagos
@@ -200,7 +198,7 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* ── RIGHT: Photo card (40%) — shown below text on mobile ── */}
+          {/* ΓöÇΓöÇ RIGHT: Photo card (40%) ΓÇö shown below text on mobile ΓöÇΓöÇ */}
           <div className="flex items-center justify-center py-8 md:py-20 md:pr-10 lg:pr-14">
             <motion.div
               initial={{ opacity: 0, scale: 0.92, x: 30 }}
@@ -260,7 +258,7 @@ export function Hero() {
                 />
               </div>
 
-              {/* Open to Work badge — top-left */}
+              {/* Open to Work badge ΓÇö top-left */}
               <motion.div
                 animate={{ y: [0, -5, 0] }}
                 transition={{ repeat: Infinity, duration: 3.2, ease: "easeInOut" }}
@@ -276,7 +274,7 @@ export function Hero() {
                 Open to Work
               </motion.div>
 
-              {/* Lagos badge — bottom-right */}
+              {/* Lagos badge ΓÇö bottom-right */}
               <motion.div
                 animate={{ y: [0, 5, 0] }}
                 transition={{ repeat: Infinity, duration: 3.8, ease: "easeInOut", delay: 0.7 }}
@@ -288,7 +286,7 @@ export function Hero() {
                   boxShadow: "0 4px 18px rgba(0,0,0,0.4), 0 0 10px hsla(36,88%,52%,0.12)",
                 }}
               >
-                📍 Lagos, NG
+                ≡ƒôì Lagos, NG
               </motion.div>
             </motion.div>
           </div>

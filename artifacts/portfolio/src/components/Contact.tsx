@@ -2,14 +2,15 @@ import { motion } from "framer-motion";
 import { Mail, MessageCircle, Linkedin } from "lucide-react";
 import { SiUpwork } from "react-icons/si";
 import { ContactForm } from "./ContactForm";
+import { SITE } from "@/lib/site";
 
 const contacts = [
   {
     name: "Email",
-    value: "opeyemiadetayo167@gmail.com",
+    value: SITE.email,
     subtext: "Best for project inquiries",
     Icon: Mail,
-    href: "mailto:opeyemiadetayo167@gmail.com",
+    href: `mailto:${SITE.email}`,
     iconColor: "hsl(36,88%,52%)",
     hoverBg: "rgba(232,160,32,0.08)",
     hoverBorder: "rgba(232,160,32,0.3)",
@@ -19,7 +20,7 @@ const contacts = [
     value: "+234 816 365 7206",
     subtext: "Quick responses",
     Icon: MessageCircle,
-    href: "https://wa.me/2348163657206",
+    href: `https://wa.me/${SITE.whatsapp}`,
     iconColor: "hsl(36,88%,52%)",
     hoverBg: "rgba(232,160,32,0.08)",
     hoverBorder: "rgba(232,160,32,0.3)",
@@ -29,7 +30,7 @@ const contacts = [
     value: "Hire me on Upwork",
     subtext: "Verified freelancer",
     Icon: SiUpwork,
-    href: "https://www.upwork.com/freelancers/~0126213fc8bb196fc4?companyReference=2046389435861582425&mp_source=share",
+    href: SITE.upwork,
     iconColor: "hsl(36,88%,52%)",
     hoverBg: "rgba(232,160,32,0.08)",
     hoverBorder: "rgba(232,160,32,0.3)",
@@ -39,7 +40,7 @@ const contacts = [
     value: "Connect with me",
     subtext: "Professional network",
     Icon: Linkedin,
-    href: "https://linkedin.com",
+    href: SITE.linkedin,
     iconColor: "hsl(36,88%,52%)",
     hoverBg: "rgba(232,160,32,0.08)",
     hoverBorder: "rgba(232,160,32,0.3)",
@@ -76,7 +77,7 @@ export function Contact() {
               {/* Section label */}
               <div className="flex items-center gap-4 mb-6">
                 <span className="font-sans text-[hsl(36,88%,52%)] text-[10px] tracking-[0.25em] uppercase">
-                  06 — Contact
+                  07 — Contact
                 </span>
                 <div className="h-px bg-white/8 flex-1" />
               </div>

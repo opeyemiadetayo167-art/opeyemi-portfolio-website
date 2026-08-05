@@ -33,7 +33,7 @@ const milestones = [
     year: "2025",
     title: "Building for Businesses",
     description:
-      "Today I offer frontend development, landing pages, and AI-assisted web builds to businesses and creators worldwide. Every project is an opportunity to sharpen my craft and deliver something I'm genuinely proud of.",
+      "Today I offer full stack web development, landing pages, and AI-assisted builds to businesses and creators worldwide. Every project is an opportunity to sharpen my craft and deliver something I'm genuinely proud of.",
     tag: "Now",
   },
 ];
@@ -61,7 +61,7 @@ export function Journey() {
 
           <h2 className="font-display font-bold tracking-tight text-3xl md:text-5xl text-white mb-4">My Story</h2>
           <p className="font-sans text-white/45 text-base md:text-lg mb-8 md:mb-16 max-w-2xl">
-            From a curious teenager with a blank code editor to a freelance frontend developer building for real businesses — here's how it happened.
+            From a curious teenager with a blank code editor to a full stack developer building for real businesses — here's how it happened.
           </p>
 
           <div className="relative">

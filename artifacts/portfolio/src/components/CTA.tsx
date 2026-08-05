@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { SITE } from "@/lib/site";
 
 export function CTA() {
   return (
     <section data-testid="cta-section" className="py-16 md:py-20 relative overflow-hidden">
-      {/* Big centred glow */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-        <div className="w-[800px] h-[400px] rounded-full blur-[120px]"
-          style={{ background: "hsla(36,88%,52%,0.07)" }} />
+        <div
+          className="w-[800px] h-[400px] rounded-full blur-[120px]"
+          style={{ background: "hsla(36,88%,52%,0.07)" }}
+        />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -31,12 +33,15 @@ export function CTA() {
             }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            AVAILABLE FOR NEW PROJECTS
+            BASED IN LAGOS · WORKING GLOBALLY
           </motion.div>
 
-          <h2 className="font-display font-bold tracking-tight text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
+          <h2 className="font-display font-bold tracking-tight text-3xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
             Let's Build Something{" "}
-            <span className="serif-italic font-normal" style={{ color: "hsl(36,88%,52%)", textShadow: "0 0 40px hsla(36,88%,52%,0.3)" }}>
+            <span
+              className="serif-italic font-normal"
+              style={{ color: "hsl(36,88%,52%)", textShadow: "0 0 40px hsla(36,88%,52%,0.3)" }}
+            >
               Great Together
             </span>
           </h2>
@@ -47,21 +52,21 @@ export function CTA() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:adetayoopeyemi8@gmail.com"
+              href={`mailto:${SITE.email}`}
               className="group inline-flex items-center gap-3 px-10 py-4 rounded-full font-sans font-semibold text-sm tracking-wide transition-all duration-300"
               style={{
                 background: "hsl(36,88%,52%)",
                 color: "hsl(222,38%,8%)",
                 boxShadow: "0 0 30px hsla(36,88%,52%,0.35)",
               }}
-              onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 0 55px hsla(36,88%,52%,0.55)")}
-              onMouseLeave={e => (e.currentTarget.style.boxShadow = "0 0 30px hsla(36,88%,52%,0.35)")}
+              onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 0 55px hsla(36,88%,52%,0.55)")}
+              onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 0 30px hsla(36,88%,52%,0.35)")}
             >
               Start a Project
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="https://wa.me/2348163657206"
+              href={`https://wa.me/${SITE.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-10 py-4 rounded-full font-sans font-semibold text-sm tracking-wide text-white/70 border border-white/10 hover:border-white/25 hover:text-white transition-all duration-300 glass-card"

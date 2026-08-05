@@ -4,31 +4,36 @@ import { About } from "@/components/About";
 import { Journey } from "@/components/Journey";
 import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
+import { Testimonials } from "@/components/Testimonials";
 import { Services } from "@/components/Services";
 import { CTA } from "@/components/CTA";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-
-const WHATSAPP_NUMBER = "2348163657206";
+import { ShootingStarsBackground } from "@/components/ui/shooting-stars-background";
+import { SITE } from "@/lib/site";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Journey />
-        <Skills />
-        <Projects />
-        <Services />
-        <CTA />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="relative min-h-screen text-foreground selection:bg-primary/30">
+      <ShootingStarsBackground interactive starCount={56} shootingStarCount={8} />
+      <div className="relative z-10">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Journey />
+          <Skills />
+          <Projects />
+          <Testimonials />
+          <Services />
+          <CTA />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
 
       <a
-        href={`https://wa.me/${WHATSAPP_NUMBER}`}
+        href={`https://wa.me/${SITE.whatsapp}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
