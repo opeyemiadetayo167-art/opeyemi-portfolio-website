@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
-import { Monitor, Rocket, User, RefreshCw, BrainCircuit, Code2 } from "lucide-react";
+import { Monitor, Rocket, User, RefreshCw, BrainCircuit, Code2, MapPin } from "lucide-react";
 
 const services = [
+  {
+    title: "Local SEO & Google Visibility",
+    description:
+      "I set up and optimize your Google Business Profile and website so people searching for your service in your area actually find you — not just your competitors.",
+    icon: MapPin,
+    highlight: true,
+  },
   {
     title: "Business Websites",
     description:

@@ -4,22 +4,22 @@ import { useRef, useEffect, useState } from "react";
 // ── Skill categories ──────────────────────────────────────────────────────────
 const categories = [
   {
-    label: "Languages & Core",
+    label: "Solid Foundations, No Shortcuts",
     highlight: "JavaScript",
     skills: ["HTML", "CSS", "JavaScript", "TypeScript"],
   },
   {
-    label: "Frameworks & Libraries",
+    label: "Fast, Smooth, No Lag",
     highlight: "React",
     skills: ["React", "Tailwind CSS", "Framer Motion"],
   },
   {
-    label: "Tools & Platforms",
+    label: "Reliable and Built to Last",
     highlight: "Git & GitHub",
     skills: ["Git & GitHub", "Vite", "Supabase"],
   },
   {
-    label: "Specialisations",
+    label: "Built to Get You Found and Booked",
     highlight: "AI-Assisted Development",
     skills: [
       "AI-Assisted Development",
@@ -145,7 +145,7 @@ export function Skills() {
 
             <div className="flex items-center gap-4">
               <h2 className="font-display font-bold tracking-tight text-3xl md:text-5xl text-white">
-                Skills &amp; Stack
+                Built the Right Way
               </h2>
               <div
                 className="h-px flex-1 ml-2"
@@ -170,10 +170,10 @@ export function Skills() {
               backdropFilter: "blur(12px)",
             }}
           >
-            <StatCounter value={15} suffix="+" label="Projects Delivered" delay={0} started={inView} />
+            <StatCounter value={15} suffix="+" label="Businesses Helped Get Found Online" delay={0} started={inView} />
             {/* Divider */}
             <div className="hidden sm:block w-px h-10 self-center justify-self-center" style={{ background: "rgba(255,255,255,0.1)" }} />
-            <StatCounter value={3} suffix="+" label="Years Experience" delay={200} started={inView} />
+            <StatCounter value={3} suffix="+" label="Years Solving This Exact Problem" delay={200} started={inView} />
             {/* Divider */}
             <div className="hidden sm:block w-px h-10 self-center justify-self-center" style={{ background: "rgba(255,255,255,0.1)" }} />
             <StatCounter value={100} suffix="%" label="Client Satisfaction" delay={400} started={inView} />

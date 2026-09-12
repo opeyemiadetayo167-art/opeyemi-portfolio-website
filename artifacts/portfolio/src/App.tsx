@@ -4,8 +4,10 @@ import { About } from "@/components/About";
 import { Journey } from "@/components/Journey";
 import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
-import { Testimonials } from "@/components/Testimonials";
+import { Proof } from "@/components/Proof";
 import { Services } from "@/components/Services";
+import { HowItWorks } from "@/components/HowItWorks";
+import { Testimonials } from "@/components/Testimonials";
 import { CTA } from "@/components/CTA";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -24,9 +26,11 @@ export default function App() {
           <Journey />
           <Skills />
           <Projects />
-          <Testimonials />
+          <Proof />
           <Services />
+          <HowItWorks />
           <CTA />
+          <Testimonials />
           <Contact />
         </main>
         <Footer />

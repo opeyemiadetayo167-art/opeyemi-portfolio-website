@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -36,6 +36,20 @@
   --color-destructive-foreground: hsl(var(--destructive-foreground));
 
   --color-gold: hsl(var(--gold));
+
+  --color-brand: hsl(var(--brand));
+  --color-brand-foreground: hsl(var(--brand-foreground));
+
+  --max-width-container: 80rem;
+
+  --shadow-glow: 0 -16px 128px 0 hsla(var(--brand-foreground) / 0.35) inset,
+    0 -16px 32px 0 hsla(var(--brand) / 0.25) inset;
+  --shadow-glow-sm: 0 0 24px hsla(var(--brand) / 0.35),
+    0 0 48px hsla(var(--brand-foreground) / 0.12);
+
+  --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+  --animate-scale-in: scale-in 0.5s ease-out forwards;
 
   --font-sans: var(--app-font-sans);
   --font-display: var(--app-font-display);
@@ -85,13 +99,17 @@
 
   --radius: 0.75rem;
   --app-font-sans: 'DM Sans', sans-serif;
-  --app-font-display: 'Syne', sans-serif;
+  --app-font-display: 'Sora', sans-serif;
   --app-font-serif: 'Playfair Display', serif;
 
   --gold-glow: 0 0 30px hsla(36, 88%, 52%, 0.35), 0 0 70px hsla(36, 88%, 52%, 0.12);
   --gold-glow-sm: 0 0 12px hsla(36, 88%, 52%, 0.4), 0 0 28px hsla(36, 88%, 52%, 0.18);
   --glass-bg: hsla(220, 32%, 11%, 0.65);
   --glass-border: hsla(210, 30%, 96%, 0.08);
+
+  /* CTA glow — aligned with gold primary */
+  --brand: 36 88% 52%;
+  --brand-foreground: 36 88% 68%;
 }
 
 /* Force dark — no light mode toggle */
@@ -116,6 +134,39 @@
   --border: 220 25% 18%;
   --input: 220 25% 18%;
   --ring: 36 88% 52%;
+  --brand: 36 88% 52%;
+  --brand-foreground: 36 88% 68%;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @layer base {
@@ -344,6 +395,84 @@
   .gold-text-glow { color: hsl(var(--gold)); text-shadow: 0 0 20px hsla(36, 88%, 52%, 0.5), 0 0 50px hsla(36, 88%, 52%, 0.2); }
   .serif-italic { font-family: var(--app-font-serif); font-style: italic; }
   .font-display { font-family: var(--app-font-display); }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-700 { animation-delay: 700ms; }
+
+  .fade-top-lg {
+    mask-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 1) 8rem);
+  }
+
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-glow-sm { box-shadow: var(--shadow-glow-sm); }
+}
+
+/* ── Hero: column-aware typography (prevents overlap with photo) ── */
+#hero .hero-grid {
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  #hero .hero-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+}
+
+#hero .hero-copy {
+  container-type: inline-size;
+  container-name: hero-copy;
+  min-width: 0;
+  max-width: 100%;
+}
+
+#hero .hero-headline-main {
+  font-size: clamp(1.85rem, 9.8cqw, 3.15rem);
+  letter-spacing: -0.025em;
+}
+
+#hero .hero-headline-accent {
+  font-size: clamp(1.7rem, 9.2cqw, 2.9rem);
+  letter-spacing: -0.01em;
+}
+
+#hero .hero-subtitle {
+  font-size: clamp(1rem, 3.8cqw, 1.25rem);
+  max-width: 36ch;
+}
+
+@media (max-width: 767px) {
+  #hero .hero-headline-main {
+    font-size: clamp(1.75rem, 8.4vw, 2.35rem);
+  }
+
+  #hero .hero-headline-accent {
+    font-size: clamp(1.55rem, 7.4vw, 2.15rem);
+  }
+
+  #hero .hero-subtitle {
+    font-size: clamp(1rem, 4.2vw, 1.15rem);
+    max-width: none;
+  }
+}
+
+/* ── CTA panel — subtle distinction from surrounding sections ── */
+.cta-panel {
+  background: linear-gradient(
+    160deg,
+    hsla(220, 32%, 13%, 0.92) 0%,
+    hsla(222, 38%, 9%, 0.96) 55%,
+    hsla(220, 30%, 11%, 0.94) 100%
+  );
+  border: 1px solid hsla(36, 88%, 52%, 0.22);
+  box-shadow:
+    0 0 0 1px hsla(255, 255, 255, 0.04) inset,
+    0 24px 80px rgba(0, 0, 0, 0.45),
+    0 0 60px hsla(36, 88%, 52%, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 /* ── Subtle grid ─────────────────────────────────────── */

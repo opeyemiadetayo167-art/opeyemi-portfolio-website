@@ -1,39 +1,40 @@
 import { motion } from "framer-motion";
 
+// `year` is a step label ("01"–"05"), not a calendar year — field name kept for existing render logic.
 const milestones = [
   {
-    year: "2023",
-    title: "The Spark",
+    year: "01",
+    title: "Your Business Has a Problem",
     description:
-      "Opened a blank code editor for the first time and typed my first lines of HTML and CSS. That moment of seeing a webpage appear from nothing was all it took — I was hooked immediately.",
-    tag: "The Beginning",
+      "Right now, someone searching for what you do is finding a competitor instead of you — because you don't have a website, or the one you have doesn't show up anywhere.",
+    tag: "The Problem",
   },
   {
-    year: "2023",
-    title: "Going Deeper",
+    year: "02",
+    title: "That's Not a Small Thing",
     description:
-      "Pushed past the basics into JavaScript, then React. Began building real interactive UIs — the kind that felt alive. Each project was harder than the last, and that's exactly how I liked it.",
-    tag: "Leveling Up",
+      "Every customer who can't find you is money you never see. It's not one lost sale — it's every day, compounding, for as long as the problem exists.",
+    tag: "The Cost",
   },
   {
-    year: "2024",
-    title: "AI Changes Everything",
+    year: "03",
+    title: "Here's What Actually Fixes It",
     description:
-      "Discovered AI-assisted development tools and the pace of my work transformed overnight. Projects that once took weeks now took days. I learned to work smarter — using AI as a co-pilot while staying in full creative control.",
-    tag: "Game Changer",
+      "Not a fancy site with animations nobody needed. A site built to do one job: make you easy to find, easy to trust, and easy to call.",
+    tag: "The Fix",
   },
   {
-    year: "2024",
-    title: "First Freelance Client",
+    year: "04",
+    title: "You Don't Wait Weeks for This",
     description:
-      "Delivered my first paid web project — a professional business website for a real client. Seeing my work live on the internet and knowing someone trusted me to represent their brand was a defining moment.",
-    tag: "Going Pro",
+      "I use AI-assisted development to build fast without cutting corners — so the customers you're losing right now stop slipping away while you wait on a slow agency.",
+    tag: "The Speed",
   },
   {
-    year: "2025",
-    title: "Building for Businesses",
+    year: "05",
+    title: "This Is Where You Come In",
     description:
-      "Today I offer full stack web development, landing pages, and AI-assisted builds to businesses and creators worldwide. Every project is an opportunity to sharpen my craft and deliver something I'm genuinely proud of.",
+      "If your business has no website, an outdated one, or one nobody can find on Google — that's exactly what I fix. Tell me about your business, and I'll show you exactly what's costing you customers right now.",
     tag: "Now",
   },
 ];
@@ -61,7 +62,7 @@ export function Journey() {
 
           <h2 className="font-display font-bold tracking-tight text-3xl md:text-5xl text-white mb-4">My Story</h2>
           <p className="font-sans text-white/45 text-base md:text-lg mb-8 md:mb-16 max-w-2xl">
-            From a curious teenager with a blank code editor to a full stack developer building for real businesses — here's how it happened.
+            This isn't about my journey. It's about what's happening to your business right now — and how fast that changes.
           </p>
 
           <div className="relative">

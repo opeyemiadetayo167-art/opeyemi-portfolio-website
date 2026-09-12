@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, Linkedin } from "lucide-react";
+import { Mail, MessageCircle, Linkedin, Phone } from "lucide-react";
 import { SiUpwork } from "react-icons/si";
 import { ContactForm } from "./ContactForm";
 import { SITE } from "@/lib/site";
@@ -21,6 +21,16 @@ const contacts = [
     subtext: "Quick responses",
     Icon: MessageCircle,
     href: `https://wa.me/${SITE.whatsapp}`,
+    iconColor: "hsl(36,88%,52%)",
+    hoverBg: "rgba(232,160,32,0.08)",
+    hoverBorder: "rgba(232,160,32,0.3)",
+  },
+  {
+    name: "Call or Text",
+    value: "+234 816 365 7206",
+    subtext: "+234 816 365 7206",
+    Icon: Phone,
+    href: `tel:+${SITE.whatsapp}`,
     iconColor: "hsl(36,88%,52%)",
     hoverBg: "rgba(232,160,32,0.08)",
     hoverBorder: "rgba(232,160,32,0.3)",
@@ -97,8 +107,8 @@ export function Contact() {
                     <motion.a
                       key={contact.name}
                       href={contact.href}
-                      target={contact.href.startsWith("mailto") ? "_self" : "_blank"}
-                      rel="noopener noreferrer"
+                      target={contact.href.startsWith("http") ? "_blank" : "_self"}
+                      rel={contact.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       data-testid={`contact-${contact.name.toLowerCase()}`}
                       initial={{ opacity: 0, y: 16 }}
                       whileInView={{ opacity: 1, y: 0 }}

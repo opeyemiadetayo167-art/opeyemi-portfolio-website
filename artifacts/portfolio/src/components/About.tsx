@@ -1,29 +1,17 @@
 import { motion } from "framer-motion";
-import { Code2, Smartphone, Zap, Globe } from "lucide-react";
+import { Code2, Smartphone, Zap, Globe, BadgeCheck } from "lucide-react";
 
 const highlights = [
-  { icon: Code2,       title: "Clean Code",         description: "Maintainable React built with best practices." },
-  { icon: Smartphone,  title: "Mobile-First",        description: "Perfect on every screen size." },
-  { icon: Zap,         title: "AI-Accelerated",      description: "Faster delivery without cutting corners." },
-  { icon: Globe,       title: "Built to Convert",    description: "Sites designed to attract leads and grow businesses." },
+  { icon: Smartphone, title: "Never Miss a Customer", description: "Your site works perfectly on every phone, because that's where most people find you first." },
+  { icon: Zap,         title: "Live in Days, Not Weeks", description: "Every day without a site is a customer lost to someone else. I move fast on purpose." },
+  { icon: Globe,       title: "Built to Convert",        description: "Every page is designed to turn a visitor into a call, not just look nice." },
+  { icon: Code2,       title: "You Own It",              description: "A real site with your name on it — not a rented Facebook page or a directory listing." },
 ];
 
 const stats = [
-  {
-    emoji: "🚀",
-    title: "5+ Live Products",
-    description: "SaaS tools with real paying users",
-  },
-  {
-    emoji: "🌍",
-    title: "International Clients",
-    description: "UK, South Africa, USA & Nigeria",
-  },
-  {
-    emoji: "⚡",
-    title: "AI-Powered Workflow",
-    description: "Ship faster without sacrificing quality",
-  },
+  { emoji: "👀", title: "Most Local Businesses Are Invisible Online", description: "If you're not showing up on Google, you're losing customers to competitors who are." },
+  { emoji: "📉", title: "Every Missed Call Is Lost Revenue",          description: "A slow, outdated, or missing website is costing you real jobs right now." },
+  { emoji: "💰", title: "A Website Pays for Itself",                 description: "One extra job booked through your site often covers the entire cost of building it." },
 ];
 
 const techStack = ["React", "TypeScript", "Node.js", "Tailwind CSS", "Supabase", "Framer Motion", "Git", "Figma"];
@@ -62,18 +50,17 @@ export function About() {
               {/* Headline + subtext */}
               <div className="space-y-5">
                 <h2 className="font-display font-bold tracking-tight leading-tight text-3xl md:text-5xl text-white">
-                  I turn ideas into{" "}
+                  I turn missed customers into{" "}
                   <span className="serif-italic font-normal" style={{ color: "hsl(36,88%,52%)" }}>
-                    high-performing
-                  </span>{" "}
-                  websites
+                    booked jobs
+                  </span>
                 </h2>
                 <div className="space-y-4 font-sans text-white/55 leading-relaxed text-base">
                   <p>
-                    Hey, I'm <strong className="text-white">Opeyemi Adetayo</strong> — a Full Stack Web Developer and AI Builder. I specialize in building responsive websites, web apps, and high-converting digital experiences from frontend to backend.
+                    Hey, I'm Opeyemi. Every day your business doesn't show up online, someone searching for exactly what you do finds a competitor instead — and they never even know you existed to compare. That's not a marketing problem, that's lost revenue, every single day.
                   </p>
                   <p>
-                    I leverage AI-assisted development tools to deliver professional, production-ready websites faster — without sacrificing quality or attention to detail.
+                    I build websites that close that gap — fast, credible, and specifically designed so local businesses stop losing customers to whoever happens to rank first on Google. I use AI-assisted development to move quickly, which means you're not waiting weeks or paying agency prices to fix a problem that's costing you business right now.
                   </p>
                 </div>
 
@@ -96,6 +83,17 @@ export function About() {
                         {tag}
                       </span>
                     ))}
+                  </div>
+                  <div
+                    className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full border font-sans text-xs font-medium tracking-wide"
+                    style={{
+                      background: "hsla(36,88%,52%,0.10)",
+                      borderColor: "hsla(36,88%,52%,0.35)",
+                      color: "hsl(36,88%,72%)",
+                    }}
+                  >
+                    <BadgeCheck size={14} style={{ color: "hsl(36,88%,52%)" }} />
+                    Claude Certified Developer &amp; Claude Certified Architect (Anthropic)
                   </div>
                 </div>
               </div>

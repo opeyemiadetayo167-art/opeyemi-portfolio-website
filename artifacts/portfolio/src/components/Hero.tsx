@@ -73,63 +73,55 @@ export function Hero() {
         />
       </div>
 
-      {/* ΓöÇΓöÇ Main: 60/40 grid, full-height, vertically centred ΓöÇΓöÇ */}
+      {/* Main: text + photo — balanced sizing */}
       <div className="relative z-20 min-h-screen flex items-center">
-        <div className="w-full grid grid-cols-1 md:grid-cols-[60fr_40fr] items-center min-h-screen">
+        <div className="container mx-auto w-full max-w-[1320px] px-5 md:px-8 lg:px-10 min-h-screen flex items-center">
+          <div className="hero-grid w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-7 lg:gap-9 items-center py-28 md:py-20">
 
-          {/* ΓöÇΓöÇ LEFT: Text (60%) ΓöÇΓöÇ */}
-          <div className="flex flex-col justify-center px-5 md:pl-20 lg:pl-24 md:pr-6 pt-28 pb-10 md:py-0 overflow-hidden">
+          {/* LEFT: Text */}
+          <div className="hero-copy flex flex-col justify-center w-full min-w-0 overflow-hidden md:pr-2 lg:pr-4">
 
-            {/* Status pill */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex self-start items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 text-white/45 font-sans text-[10px] tracking-[0.18em] mb-8"
+              className="inline-flex self-start items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 text-white/45 font-sans text-[10px] tracking-[0.18em] mb-6 md:mb-8"
               style={{ background: "hsla(220,30%,13%,0.55)", backdropFilter: "blur(10px)" }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              AVAILABLE FOR PROJECTS
+              MOST CUSTOMERS CHECK GOOGLE BEFORE THEY CALL
             </motion.div>
 
-            {/* Headline ΓÇö strictly inside left column */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="max-w-full"
+              className="w-full"
             >
-              {/* Line 1 */}
               <div
-                className="font-display font-extrabold text-white leading-[0.95] max-w-full"
-                style={{ fontSize: "clamp(1.75rem, 4.5vw, 3.5rem)", letterSpacing: "-0.02em" }}
+                className="hero-headline-main font-display font-extrabold text-white leading-[0.92] w-full max-w-full"
               >
-                Full stack
+                Invisible businesses
               </div>
 
-              {/* Line 2 — italic gold, slightly smaller */}
               <div
-                className="serif-italic leading-[1.05] max-w-full"
+                className="hero-headline-accent serif-italic leading-[1.02] w-full max-w-full"
                 style={{
-                  fontSize: "clamp(1.5rem, 3.8vw, 2.85rem)",
-                  letterSpacing: "-0.01em",
                   color: "hsl(36,88%,52%)",
                   textShadow: "0 0 60px hsla(36,88%,52%,0.28)",
                   background: "none",
                   WebkitTextFillColor: "hsl(36,88%,52%)",
-                  marginTop: "0.06em",
-                  marginBottom: "0.06em",
+                  marginTop: "0.04em",
+                  marginBottom: "0.04em",
                 }}
               >
-                web
+                lose
               </div>
 
-              {/* Line 3 */}
               <div
-                className="font-display font-extrabold text-white leading-[0.95] max-w-full"
-                style={{ fontSize: "clamp(1.65rem, 4.2vw, 3.25rem)", letterSpacing: "-0.02em" }}
+                className="hero-headline-main font-display font-extrabold text-white leading-[0.92] w-full max-w-full"
               >
-                developer
+                to visible ones
               </div>
             </motion.div>
 
@@ -138,7 +130,7 @@ export function Hero() {
               initial={{ opacity: 0, scaleX: 0 }}
               animate={{ opacity: 1, scaleX: 1 }}
               transition={{ duration: 0.8, delay: 0.22 }}
-              className="origin-left mt-8 mb-5 h-[2px] w-10"
+              className="origin-left mt-6 md:mt-8 mb-4 md:mb-5 h-[2px] w-14"
               style={{ background: "hsl(36,88%,52%)" }}
             />
 
@@ -147,11 +139,10 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="font-sans font-medium leading-relaxed max-w-md"
-              style={{ fontSize: "clamp(1rem, 1.5vw, 1.2rem)", color: "rgba(255,255,255,0.75)" }}
+              className="hero-subtitle font-sans font-medium leading-relaxed w-full"
+              style={{ color: "rgba(255,255,255,0.75)" }}
             >
-              I craft high-converting websites and digital experiences
-              for businesses and creators. Fast, modern, beautiful.
+              Right now, someone is searching for exactly what you do — and if they can't find you, they're calling whoever they find instead. I build websites that make sure that call comes to you.
             </motion.p>
 
             {/* CTA buttons */}
@@ -190,7 +181,7 @@ export function Hero() {
               className="flex flex-col gap-1 mt-10 items-center md:items-start"
             >
               <p className="font-sans text-white/25 text-[9px] tracking-[0.24em] uppercase">
-                Full Stack / Web Apps / SaaS
+                Get Found. Get Called. Get Chosen.
               </p>
               <p className="font-sans text-white/25 text-[9px] tracking-[0.24em] uppercase">
                 Based in Lagos
@@ -198,13 +189,13 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* ΓöÇΓöÇ RIGHT: Photo card (40%) ΓÇö shown below text on mobile ΓöÇΓöÇ */}
-          <div className="flex items-center justify-center py-8 md:py-20 md:pr-10 lg:pr-14">
+          {/* RIGHT: Photo */}
+          <div className="relative z-10 flex items-center justify-center md:justify-end py-6 md:py-0 w-full min-w-0">
             <motion.div
               initial={{ opacity: 0, scale: 0.92, x: 30 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.35, ease: "easeOut" }}
-              className="relative w-full max-w-[280px] md:max-w-[380px]"
+              className="relative w-full max-w-[300px] sm:max-w-[360px] md:max-w-[min(100%,400px)] lg:max-w-[min(100%,440px)] xl:max-w-[460px]"
             >
               {/* Outer glow */}
               <div
@@ -286,11 +277,12 @@ export function Hero() {
                   boxShadow: "0 4px 18px rgba(0,0,0,0.4), 0 0 10px hsla(36,88%,52%,0.12)",
                 }}
               >
-                ≡ƒôì Lagos, NG
+                Lagos, NG
               </motion.div>
             </motion.div>
           </div>
 
+        </div>
         </div>
       </div>
 
