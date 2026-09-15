@@ -1,12 +1,14 @@
-﻿import { motion } from "framer-motion";
+﻿import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 export function Hero() {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section
       id="hero"
       data-testid="hero-section"
-      className="relative min-h-screen overflow-hidden bg-transparent"
+      className="relative min-h-[100svh] overflow-hidden bg-transparent"
     >
       {/* Grain */}
       <div
@@ -19,8 +21,8 @@ export function Hero() {
 
       {/* Shimmer */}
       <motion.div
-        className="absolute inset-0 pointer-events-none z-0"
-        animate={{ backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
+        className="absolute inset-0 pointer-events-none z-0 hidden md:block"
+        animate={reduceMotion ? undefined : { backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
         transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
         style={{
           backgroundImage:
@@ -48,9 +50,9 @@ export function Hero() {
       />
 
       {/* Lens flare */}
-      <div className="absolute top-[22%] left-[37%] pointer-events-none z-10">
+      <div className="absolute top-[22%] left-[37%] pointer-events-none z-10 hidden md:block">
         <motion.div
-          animate={{ opacity: [0.3, 0.65, 0.3], scale: [1, 1.06, 1] }}
+          animate={reduceMotion ? undefined : { opacity: [0.3, 0.65, 0.3], scale: [1, 1.06, 1] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           style={{
             width: 60,
@@ -74,9 +76,9 @@ export function Hero() {
       </div>
 
       {/* Main: text + photo — balanced sizing */}
-      <div className="relative z-20 min-h-screen flex items-center">
-        <div className="container mx-auto w-full max-w-[1320px] px-5 md:px-8 lg:px-10 min-h-screen flex items-center">
-          <div className="hero-grid w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-7 lg:gap-9 items-center py-28 md:py-20">
+      <div className="relative z-20 flex items-center md:min-h-[100svh]">
+        <div className="container mx-auto w-full max-w-[1320px] px-5 md:px-8 lg:px-10 md:min-h-[100svh] md:flex md:items-center">
+          <div className="hero-grid w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-7 lg:gap-9 items-center pt-28 pb-16 md:py-20">
 
           {/* LEFT: Text */}
           <div className="hero-copy flex flex-col justify-center w-full min-w-0 overflow-hidden md:pr-2 lg:pr-4">
@@ -85,7 +87,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex self-start items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 text-white/45 font-sans text-[10px] tracking-[0.18em] mb-6 md:mb-8"
+              className="inline-flex self-start items-center gap-2 max-w-full px-3 sm:px-4 py-1.5 rounded-full border border-white/10 text-white/45 font-sans text-[9px] sm:text-[10px] tracking-[0.1em] sm:tracking-[0.18em] mb-6 md:mb-8 text-left leading-snug"
               style={{ background: "hsla(220,30%,13%,0.55)", backdropFilter: "blur(10px)" }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -150,11 +152,11 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 mt-8"
+              className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 mt-8 w-full sm:w-auto"
             >
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-sans font-semibold text-sm tracking-wide transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 min-h-11 px-7 py-3.5 rounded-full font-sans font-semibold text-sm tracking-wide transition-all duration-300"
                 style={{
                   background: "#E8A020",
                   color: "hsl(222,38%,8%)",
@@ -167,7 +169,7 @@ export function Hero() {
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-sans font-semibold text-sm tracking-wide text-white border border-white/20 hover:border-white/45 hover:bg-white/5 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 min-h-11 px-7 py-3.5 rounded-full font-sans font-semibold text-sm tracking-wide text-white border border-white/20 hover:border-white/45 hover:bg-white/5 transition-all duration-300"
               >
                 Contact Me
               </a>
@@ -178,12 +180,12 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.1, duration: 0.6 }}
-              className="flex flex-col gap-1 mt-10 items-center md:items-start"
+              className="flex flex-col gap-1 mt-10 items-start"
             >
-              <p className="font-sans text-white/25 text-[9px] tracking-[0.24em] uppercase">
+              <p className="font-sans text-white/25 text-[9px] tracking-[0.16em] sm:tracking-[0.24em] uppercase">
                 Get Found. Get Called. Get Chosen.
               </p>
-              <p className="font-sans text-white/25 text-[9px] tracking-[0.24em] uppercase">
+              <p className="font-sans text-white/25 text-[9px] tracking-[0.16em] sm:tracking-[0.24em] uppercase">
                 Based in Lagos
               </p>
             </motion.div>
@@ -195,7 +197,7 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.92, x: 30 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.35, ease: "easeOut" }}
-              className="relative w-full max-w-[300px] sm:max-w-[360px] md:max-w-[min(100%,400px)] lg:max-w-[min(100%,440px)] xl:max-w-[460px]"
+              className="relative w-full max-w-[min(100%,280px)] sm:max-w-[360px] md:max-w-[min(100%,400px)] lg:max-w-[min(100%,440px)] xl:max-w-[460px]"
             >
               {/* Outer glow */}
               <div
@@ -225,6 +227,8 @@ export function Hero() {
                   src="/hero-photo.png"
                   alt="Opeyemi Adetayo"
                   className="w-full h-full object-cover"
+                  fetchPriority="high"
+                  decoding="async"
                   style={{
                     objectPosition: "center top",
                     filter: "contrast(1.03) brightness(0.97) saturate(0.9)",
@@ -251,9 +255,9 @@ export function Hero() {
 
               {/* Open to Work badge ΓÇö top-left */}
               <motion.div
-                animate={{ y: [0, -5, 0] }}
+                animate={reduceMotion ? undefined : { y: [0, -5, 0] }}
                 transition={{ repeat: Infinity, duration: 3.2, ease: "easeInOut" }}
-                className="absolute top-5 left-5 z-30 flex items-center gap-2 px-4 py-2 rounded-full font-sans text-xs font-bold tracking-wider text-white"
+                className="absolute top-4 left-3 sm:top-5 sm:left-5 z-30 flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-sans text-[11px] sm:text-xs font-bold tracking-wider text-white"
                 style={{
                   background: "rgba(16,22,38,0.82)",
                   backdropFilter: "blur(16px)",
@@ -267,9 +271,9 @@ export function Hero() {
 
               {/* Lagos badge ΓÇö bottom-right */}
               <motion.div
-                animate={{ y: [0, 5, 0] }}
+                animate={reduceMotion ? undefined : { y: [0, 5, 0] }}
                 transition={{ repeat: Infinity, duration: 3.8, ease: "easeInOut", delay: 0.7 }}
-                className="absolute bottom-10 right-5 z-30 flex items-center gap-1.5 px-4 py-2 rounded-full font-sans text-xs font-bold tracking-wider text-white"
+                className="absolute bottom-8 right-3 sm:bottom-10 sm:right-5 z-30 flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full font-sans text-[11px] sm:text-xs font-bold tracking-wider text-white"
                 style={{
                   background: "rgba(16,22,38,0.82)",
                   backdropFilter: "blur(16px)",
@@ -291,11 +295,11 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4 }}
-        className="absolute bottom-8 right-8 md:right-14 z-20 flex flex-col items-center gap-2"
+        className="absolute bottom-8 right-8 md:right-14 z-20 hidden md:flex flex-col items-center gap-2"
       >
         <span className="font-sans text-white/22 text-[9px] tracking-[0.22em] uppercase">Scroll</span>
         <motion.div
-          animate={{ y: [0, 8, 0] }}
+          animate={reduceMotion ? undefined : { y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
           className="w-px h-8"
           style={{ background: "linear-gradient(to bottom, hsla(36,88%,52%,0.5), transparent)" }}

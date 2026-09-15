@@ -16,7 +16,7 @@ import { SITE } from "@/lib/site";
 
 export default function App() {
   return (
-    <div className="relative min-h-screen text-foreground selection:bg-primary/30">
+    <div className="relative min-h-screen min-w-0 overflow-x-clip text-foreground selection:bg-primary/30">
       <ShootingStarsBackground interactive starCount={56} shootingStarCount={8} />
       <div className="relative z-10">
         <Navbar />
@@ -41,7 +41,7 @@ export default function App() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-transform hover:scale-110 active:scale-95"
+        className="fixed z-50 flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-background bottom-[max(5rem,calc(env(safe-area-inset-bottom)+1.25rem))] right-[max(1.25rem,env(safe-area-inset-right))] md:bottom-6"
         style={{ backgroundColor: "#25D366" }}
       >
         <svg

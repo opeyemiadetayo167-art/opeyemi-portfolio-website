@@ -71,7 +71,7 @@ export function Contact() {
         />
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <div className="container mx-auto px-5 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +92,7 @@ export function Contact() {
                 <div className="h-px bg-white/8 flex-1" />
               </div>
 
-              <h2 className="font-display font-bold tracking-tight text-3xl md:text-5xl text-white mb-4">
+              <h2 className="font-display font-bold tracking-tight text-[1.85rem] sm:text-3xl md:text-5xl text-white mb-4">
                 Get In Touch
               </h2>
               <p className="font-sans text-white/45 text-base leading-relaxed mb-10 max-w-md">
@@ -100,7 +100,7 @@ export function Contact() {
               </p>
 
               {/* 2×2 contact card grid */}
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 min-[480px]:grid-cols-2 gap-3">
                 {contacts.map((contact, index) => {
                   const IconComponent = contact.Icon;
                   return (
@@ -115,7 +115,7 @@ export function Contact() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: index * 0.08 }}
                       whileHover={{ y: -3 }}
-                      className="contact-card group flex items-center gap-3 p-4 rounded-2xl transition-all duration-300"
+                      className="contact-card group flex items-center gap-3 p-4 min-h-14 rounded-2xl transition-all duration-300 min-w-0"
                     >
                       {/* Gold icon container */}
                       <div

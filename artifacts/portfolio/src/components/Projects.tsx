@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, X, CheckCircle2 } from "lucide-react";
 
@@ -174,13 +174,26 @@ const projects: Project[] = [
 
 /* ── Modal (unchanged logic, refreshed styles) ── */
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [onClose]);
+
   return (
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4"
+        className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4"
         style={{ background: "rgba(10,12,20,0.85)", backdropFilter: "blur(12px)" }}
         onClick={onClose}
       >
@@ -189,7 +202,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.3 }}
-          className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl glass-card shadow-2xl"
+          className="relative w-full max-w-2xl max-h-[92svh] overflow-y-auto rounded-t-3xl sm:rounded-3xl glass-card shadow-2xl"
           style={{ boxShadow: "0 0 80px rgba(0,0,0,0.6), 0 0 40px hsla(36,88%,52%,0.05)" }}
           onClick={(e) => e.stopPropagation()}
         >
@@ -201,7 +214,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             />
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+              className="absolute top-4 right-4 w-11 h-11 rounded-full flex items-center justify-center transition-colors"
               style={{ background: "rgba(0,0,0,0.5)", color: "white", backdropFilter: "blur(8px)" }}
               data-testid="modal-close"
             >
@@ -209,7 +222,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             </button>
           </div>
 
-          <div className="p-8 space-y-6">
+          <div className="p-5 sm:p-8 space-y-6">
             <div>
               <div className="flex flex-wrap items-center gap-2 mb-3">
                 <span
@@ -223,7 +236,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                   Featured Project
                 </span>
               </div>
-              <h3 className="font-display font-bold text-white text-2xl md:text-3xl mb-3">
+              <h3 className="font-display font-bold text-white text-xl sm:text-2xl md:text-3xl mb-3">
                 {project.title}
               </h3>
               <p className="font-sans text-white/50 leading-relaxed">{project.overview}</p>
@@ -275,7 +288,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-sans font-semibold text-sm transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 min-h-11 px-6 py-2.5 rounded-full font-sans font-semibold text-sm transition-all duration-300"
                   style={{
                     background: "hsl(36,88%,52%)",
                     color: "hsl(222,38%,8%)",

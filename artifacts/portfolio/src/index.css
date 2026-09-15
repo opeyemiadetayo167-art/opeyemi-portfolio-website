@@ -173,8 +173,14 @@
   * {
     @apply border-border;
   }
+  html {
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
   body {
-    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
+    @apply bg-background text-foreground font-sans antialiased;
+    overflow-x: clip;
     background-image:
       radial-gradient(ellipse 80% 60% at 60% -10%, hsla(220, 80%, 40%, 0.22) 0%, transparent 60%),
       radial-gradient(ellipse 50% 40% at 5% 80%, hsla(36, 88%, 52%, 0.07) 0%, transparent 55%),
@@ -192,12 +198,18 @@
     background-repeat: repeat;
     background-size: 200px 200px;
   }
-  html {
-    scroll-behavior: smooth;
-  }
   h1, h2, h3, h4 {
     font-family: var(--app-font-display);
     letter-spacing: -0.02em;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+  }
+  img, svg, video, canvas {
+    max-width: 100%;
+  }
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 3px;
   }
 }
 
@@ -205,13 +217,16 @@
 .glass-card {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.glass-card:hover {
-  border-color: hsla(36, 88%, 52%, 0.25);
-  box-shadow: 0 0 40px hsla(36, 88%, 52%, 0.08), 0 8px 32px rgba(0,0,0,0.3);
+@media (hover: hover) and (pointer: fine) {
+  .glass-card:hover {
+    border-color: hsla(36, 88%, 52%, 0.25);
+    box-shadow: 0 0 40px hsla(36, 88%, 52%, 0.08), 0 8px 32px rgba(0,0,0,0.3);
+  }
 }
 
 /* ── Services section cards ──────────────────────────── */
@@ -219,8 +234,8 @@
   position: relative;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 /* Top gold border accent — hidden by default, slides in on hover */
@@ -238,25 +253,30 @@
   z-index: 20;
 }
 
-.services-card:hover .services-card__top-border {
-  transform: scaleX(1);
-}
+@media (hover: hover) and (pointer: fine) {
+  .services-card:hover .services-card__top-border {
+    transform: scaleX(1);
+  }
 
-.services-card:hover {
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.12);
+  .services-card:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
 }
 
 /* ── Services CTA button ─────────────────────────────── */
 .services-cta-btn {
   display: inline-flex;
   align-items: center;
-  padding: 8px 22px;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 22px;
   border-radius: 9999px;
   border: 1px solid hsl(36, 88%, 52%);
   color: hsl(36, 88%, 52%);
   background: transparent;
   text-decoration: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .services-cta-btn:hover {
@@ -270,18 +290,25 @@
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-left: 3px solid #E8A020;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.project-card:hover {
-  box-shadow: 0 0 40px rgba(99, 102, 241, 0.12), 0 8px 40px rgba(0, 0, 0, 0.35);
-  border-color: rgba(255, 255, 255, 0.12);
-  border-left-color: #E8A020;
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.12), 0 8px 40px rgba(0, 0, 0, 0.35);
+    border-color: rgba(255, 255, 255, 0.12);
+    border-left-color: #E8A020;
+  }
 }
 
 /* Gold filled button */
+.project-btn-primary,
+.project-btn-outline {
+  min-height: 44px;
+}
+
 .project-btn-primary {
   background: hsl(36, 88%, 52%);
   color: #0d0d0d;
@@ -311,14 +338,16 @@
 .about-stat-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
-.about-stat-card:hover {
-  background: rgba(232, 160, 32, 0.05);
-  border-color: rgba(232, 160, 32, 0.22);
-  box-shadow: 0 0 24px rgba(232, 160, 32, 0.08);
+@media (hover: hover) and (pointer: fine) {
+  .about-stat-card:hover {
+    background: rgba(232, 160, 32, 0.05);
+    border-color: rgba(232, 160, 32, 0.22);
+    box-shadow: 0 0 24px rgba(232, 160, 32, 0.08);
+  }
 }
 
 /* ── Contact section ─────────────────────────────────── */
@@ -326,20 +355,24 @@
 .contact-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
-.contact-card:hover {
-  background: rgba(232, 160, 32, 0.06);
-  border-color: rgba(232, 160, 32, 0.28);
-  box-shadow: 0 0 24px rgba(232, 160, 32, 0.10);
+@media (hover: hover) and (pointer: fine) {
+  .contact-card:hover {
+    background: rgba(232, 160, 32, 0.06);
+    border-color: rgba(232, 160, 32, 0.28);
+    box-shadow: 0 0 24px rgba(232, 160, 32, 0.10);
+  }
 }
 
 .contact-input {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.10);
   color: #fff;
+  min-height: 44px;
+  font-size: 16px;
 }
 
 .contact-input:focus {
@@ -374,6 +407,7 @@
   color: #0d0d0d;
   border: none;
   cursor: pointer;
+  min-height: 48px;
 }
 
 .contact-submit-btn:hover:not(:disabled) {
@@ -503,65 +537,56 @@
 ::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary)); }
 
-/* ── Mobile responsiveness (max 767px) ───────────────── */
-@media (max-width: 767px) {
-
-  /* Consistent horizontal padding across all sections */
-  .container {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-
-  /* Project card image: 220px on mobile, stacks above info */
-  .project-img-container {
-    height: 220px;
-  }
-
-  /* Services: single column */
-  #services .grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* About: stack columns */
-  #about .flex.lg\\:flex-row {
-    flex-direction: column !important;
-  }
-  #about .lg\\:w-1\\/2 {
-    width: 100% !important;
-  }
-
-  /* Contact: stack columns */
-  #contact .lg\\:flex-row {
-    flex-direction: column !important;
-  }
-  #contact .lg\\:w-\\[55\\%\\],
-  #contact .lg\\:w-\\[45\\%\\] {
-    width: 100% !important;
-  }
-
-  /* Journey: left-aligned on mobile already handled in component */
-
-  /* Section headings scale */
-  h2.font-display {
-    font-size: clamp(1.85rem, 7vw, 2.25rem) !important;
-  }
-
-  /* Skills stats: already grid-cols-1 on mobile via Tailwind */
-
-  /* Hero: ensure photo card doesn't overflow */
-  #hero .max-w-\\[280px\\] {
-    max-width: 260px;
-  }
-}
-
-/* Project card image height: default mobile then md override */
 .project-img-container {
-  height: 320px;
+  height: 200px;
+}
+
+@media (min-width: 768px) {
+  .project-img-container {
+    height: 320px;
+  }
+}
+
+@media (max-width: 429px) {
+  h2.font-display {
+    font-size: clamp(1.7rem, 8vw, 2.1rem);
+  }
 }
 
 @media (max-width: 767px) {
-  .project-img-container {
-    height: 220px;
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  h2.font-display {
+    font-size: clamp(1.85rem, 7vw, 2.25rem);
+  }
+
+  .services-card {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

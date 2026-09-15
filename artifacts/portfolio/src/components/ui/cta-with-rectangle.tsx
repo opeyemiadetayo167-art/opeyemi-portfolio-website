@@ -30,7 +30,7 @@ export function CTASection({
 }: CTAProps) {
   return (
     <section className={cn("overflow-hidden pt-0 md:pt-0", className)}>
-      <div className="relative mx-auto flex max-w-container flex-col items-center gap-6 px-8 py-12 text-center sm:gap-8 md:py-20 lg:py-24">
+      <div className="relative mx-auto flex max-w-container flex-col items-center gap-6 px-5 py-10 text-center sm:gap-8 sm:px-8 md:py-20 lg:py-24">
         {badge && (
           <Badge
             variant="outline"
@@ -43,7 +43,7 @@ export function CTASection({
           </Badge>
         )}
 
-        <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl opacity-0 animate-fade-in-up delay-200 leading-tight">
+        <h2 className="font-display text-[1.85rem] font-bold tracking-tight text-white sm:text-4xl md:text-5xl opacity-0 animate-fade-in-up delay-200 leading-tight">
           {title}
         </h2>
 
@@ -56,7 +56,7 @@ export function CTASection({
         <Button
           variant={action.variant || "default"}
           size="lg"
-          className="opacity-0 animate-fade-in-up delay-500 rounded-full px-8"
+          className="opacity-0 animate-fade-in-up delay-500 rounded-full min-h-11 px-8"
           asChild
         >
           <a href={action.href}>{action.text}</a>

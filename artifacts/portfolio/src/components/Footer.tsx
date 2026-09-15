@@ -26,12 +26,12 @@ export function Footer() {
             <p className="font-sans text-xs text-white/35">{SITE.shortTitle} · {SITE.location}</p>
           </div>
 
-          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          <nav className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
             {footerLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="font-sans text-xs text-white/40 hover:text-[hsl(36,88%,52%)] tracking-[0.12em] uppercase transition-colors"
+                className="font-sans text-xs text-white/40 hover:text-[hsl(36,88%,52%)] tracking-[0.12em] uppercase transition-colors min-h-11 inline-flex items-center px-3"
               >
                 {link.label}
               </a>
@@ -46,7 +46,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-white/30 hover:text-[hsl(36,88%,52%)] transition-colors p-2.5 rounded-lg hover:bg-white/5"
+                className="text-white/30 hover:text-[hsl(36,88%,52%)] transition-colors min-h-11 min-w-11 inline-flex items-center justify-center rounded-lg hover:bg-white/5"
               >
                 <Icon size={18} />
               </a>

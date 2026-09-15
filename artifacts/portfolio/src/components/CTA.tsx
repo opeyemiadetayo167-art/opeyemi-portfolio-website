@@ -11,7 +11,7 @@ const TRUST_POINTS = [
 export function CTA() {
   return (
     <section data-testid="cta-section" className="relative py-16 md:py-24">
-      <div className="container mx-auto px-6 md:px-12">
+      <div className="container mx-auto px-5 md:px-12">
         <div className="cta-panel relative overflow-hidden rounded-3xl">
           <div
             className="pointer-events-none absolute inset-0 opacity-60"
@@ -51,10 +51,10 @@ export function CTA() {
             }}
             className="relative z-10"
           >
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 opacity-0 animate-fade-in-up delay-500">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 opacity-0 animate-fade-in-up delay-500 w-full sm:w-auto">
               <a
                 href={`mailto:${SITE.email}`}
-                className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-5 py-2.5 text-sm text-white/70 transition-colors hover:border-white/25 hover:text-white"
+                className="inline-flex items-center justify-center gap-2 min-h-11 rounded-full border border-white/12 bg-white/5 px-5 py-2.5 text-sm text-white/70 transition-colors hover:border-white/25 hover:text-white"
               >
                 <Mail size={15} />
                 Email
@@ -63,14 +63,14 @@ export function CTA() {
                 href={`https://wa.me/${SITE.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-5 py-2.5 text-sm text-white/70 transition-colors hover:border-white/25 hover:text-white"
+                className="inline-flex items-center justify-center gap-2 min-h-11 rounded-full border border-white/12 bg-white/5 px-5 py-2.5 text-sm text-white/70 transition-colors hover:border-white/25 hover:text-white"
               >
                 <MessageCircle size={15} />
                 WhatsApp
               </a>
             </div>
 
-            <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 font-sans text-sm text-white/35 opacity-0 animate-fade-in-up delay-700">
+            <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8 font-sans text-sm text-white/35 opacity-0 animate-fade-in-up delay-700">
               {TRUST_POINTS.map((point) => (
                 <div key={point.label} className="flex items-center gap-2">
                   <span className={`h-1.5 w-1.5 rounded-full ${point.color}`} />

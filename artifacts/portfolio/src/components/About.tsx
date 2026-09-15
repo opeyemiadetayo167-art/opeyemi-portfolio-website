@@ -28,7 +28,7 @@ export function About() {
         }}
       />
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <div className="container mx-auto px-5 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ export function About() {
             <div className="w-full lg:w-1/2 space-y-8">
               {/* Headline + subtext */}
               <div className="space-y-5">
-                <h2 className="font-display font-bold tracking-tight leading-tight text-3xl md:text-5xl text-white">
+                <h2 className="font-display font-bold tracking-tight leading-tight text-[1.85rem] sm:text-3xl md:text-5xl text-white">
                   I turn missed customers into{" "}
                   <span className="serif-italic font-normal" style={{ color: "hsl(36,88%,52%)" }}>
                     booked jobs
@@ -85,21 +85,21 @@ export function About() {
                     ))}
                   </div>
                   <div
-                    className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full border font-sans text-xs font-medium tracking-wide"
+                    className="mt-4 inline-flex max-w-full items-start sm:items-center gap-2 px-3 sm:px-4 py-2 rounded-2xl sm:rounded-full border font-sans text-xs font-medium tracking-wide text-left leading-snug"
                     style={{
                       background: "hsla(36,88%,52%,0.10)",
                       borderColor: "hsla(36,88%,52%,0.35)",
                       color: "hsl(36,88%,72%)",
                     }}
                   >
-                    <BadgeCheck size={14} style={{ color: "hsl(36,88%,52%)" }} />
+                    <BadgeCheck size={14} className="mt-0.5 flex-shrink-0" style={{ color: "hsl(36,88%,52%)" }} />
                     Claude Certified Developer &amp; Claude Certified Architect (Anthropic)
                   </div>
                 </div>
               </div>
 
               {/* 2×2 highlights grid */}
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 min-[480px]:grid-cols-2 gap-3">
                 {highlights.map((item, index) => (
                   <motion.div
                     key={item.title}
@@ -107,7 +107,7 @@ export function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="group p-5 rounded-2xl glass-card transition-all duration-300"
+                    className="group p-4 sm:p-5 rounded-2xl glass-card transition-all duration-300 min-w-0"
                   >
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
@@ -131,7 +131,7 @@ export function About() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.12 }}
-                  className="about-stat-card group flex items-start gap-4 p-5 rounded-2xl transition-all duration-300"
+                  className="about-stat-card group flex items-start gap-4 p-4 sm:p-5 rounded-2xl transition-all duration-300 min-w-0"
                 >
                   {/* Emoji in gold-tinted container */}
                   <div

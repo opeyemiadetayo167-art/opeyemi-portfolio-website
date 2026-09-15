@@ -75,7 +75,7 @@ function StatCounter({
   const count = useCounter(value, 1600, active);
 
   return (
-    <div className="flex flex-col items-center text-center px-8">
+    <div className="flex flex-col items-center text-center px-4 sm:px-6 md:px-8 min-w-0 flex-1">
       <span
         className="font-display font-extrabold leading-none"
         style={{ fontSize: "clamp(2.2rem, 4vw, 3.4rem)", color: "#fff" }}
@@ -121,7 +121,7 @@ export function Skills() {
         }}
       />
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <div className="container mx-auto px-5 md:px-12 relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 24 }}
@@ -143,12 +143,12 @@ export function Skills() {
               03 — SKILLS
             </motion.p>
 
-            <div className="flex items-center gap-4">
-              <h2 className="font-display font-bold tracking-tight text-3xl md:text-5xl text-white">
+            <div className="flex items-center gap-4 min-w-0">
+              <h2 className="font-display font-bold tracking-tight text-[1.85rem] sm:text-3xl md:text-5xl text-white min-w-0">
                 Built the Right Way
               </h2>
               <div
-                className="h-px flex-1 ml-2"
+                className="hidden sm:block h-px flex-1 ml-2"
                 style={{
                   background:
                     "linear-gradient(to right, hsla(36,88%,52%,0.35), transparent)",
@@ -163,7 +163,7 @@ export function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="grid grid-cols-1 sm:grid-cols-3 w-full mb-7 rounded-2xl py-7 px-6"
+            className="flex flex-col sm:flex-row sm:items-center w-full mb-7 rounded-2xl py-6 px-4 sm:py-7 sm:px-6 gap-5 sm:gap-0"
             style={{
               background: "hsla(220,32%,10%,0.5)",
               border: "1px solid rgba(255,255,255,0.06)",
@@ -188,7 +188,7 @@ export function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.45, delay: catIdx * 0.08 }}
-                className="rounded-2xl p-8"
+                className="rounded-2xl p-5 sm:p-8 min-w-0"
                 style={{
                   background: "hsla(220,28%,10%,0.55)",
                   border: "1px solid rgba(255,255,255,0.06)",
