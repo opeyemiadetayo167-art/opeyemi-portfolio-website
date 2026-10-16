@@ -87,7 +87,7 @@ export function Contact() {
               {/* Section label */}
               <div className="flex items-center gap-4 mb-6">
                 <span className="font-sans text-[hsl(36,88%,52%)] text-[10px] tracking-[0.25em] uppercase">
-                  07 — Contact
+                  09 — Contact
                 </span>
                 <div className="h-px bg-white/8 flex-1" />
               </div>

@@ -1,9 +1,16 @@
 import { motion } from "framer-motion";
-import { Monitor, Rocket, User, RefreshCw, BrainCircuit, Code2, MapPin } from "lucide-react";
+import { Monitor, Rocket, RefreshCw, Code2, MapPin, Wrench } from "lucide-react";
 
 const services = [
   {
-    title: "Local SEO & Google Visibility",
+    title: "Websites for Local Service Businesses",
+    description:
+      "For cleaners, lawn care, pressure washing, handymen, painters and other trades: your services, service area, real reviews and a big \"Call now\" button, so people who hear your name can find you and call.",
+    icon: Wrench,
+    highlight: true,
+  },
+  {
+    title: "Google Business Profile & Local SEO",
     description:
       "I set up and optimize your Google Business Profile and website so people searching for your service in your area actually find you — not just your competitors.",
     icon: MapPin,
@@ -17,20 +24,6 @@ const services = [
     highlight: false,
   },
   {
-    title: "Landing Pages",
-    description:
-      "High-converting landing pages engineered to capture leads, drive sign-ups, and maximize your marketing ROI.",
-    icon: Rocket,
-    highlight: true,
-  },
-  {
-    title: "Portfolio Websites",
-    description:
-      "Stunning personal portfolios that showcase your work, tell your story, and attract the clients you want.",
-    icon: User,
-    highlight: false,
-  },
-  {
     title: "Website Redesigns",
     description:
       "Breathing new life into outdated websites with modern UI, improved performance, and better user experience.",
@@ -38,14 +31,14 @@ const services = [
     highlight: false,
   },
   {
-    title: "AI-Assisted Development",
+    title: "Landing Pages",
     description:
-      "Combining AI-powered tools with expert frontend skills to deliver high-quality websites in record time.",
-    icon: BrainCircuit,
-    highlight: true,
+      "Focused pages built to capture leads and quote requests for one service, offer or season.",
+    icon: Rocket,
+    highlight: false,
   },
   {
-    title: "Full-Stack Development",
+    title: "Full-Stack Web Apps",
     description:
       "End-to-end web apps built with React, Node.js, and Supabase. From idea to deployed product.",
     icon: Code2,
@@ -84,7 +77,7 @@ export function Services() {
             What I Offer
           </h2>
           <p className="font-sans text-white/45 text-lg mb-16 max-w-xl">
-            End-to-end web development services tailored to help your business stand out and grow online.
+            Websites and Google visibility for small businesses that run on Facebook and word of mouth, and want more customers to find them and call.
           </p>
 
           {/* 3 + 3 card grid */}
@@ -139,14 +132,14 @@ export function Services() {
             transition={{ duration: 0.5, delay: 0.35 }}
             className="mt-12 flex items-center justify-center gap-5 flex-wrap"
           >
-            <p className="font-sans text-white/60 text-base">
-              Need something custom? Let's talk.
+            <p className="font-sans text-white/60 text-base text-center">
+              Not sure yet? I'll build a free homepage preview for your business. No cost, no obligation.
             </p>
             <a
               href="#contact"
               className="font-sans font-semibold text-sm tracking-wide transition-all duration-300 services-cta-btn"
             >
-              Get a Quote
+              Get My Free Preview
             </a>
           </motion.div>
         </motion.div>

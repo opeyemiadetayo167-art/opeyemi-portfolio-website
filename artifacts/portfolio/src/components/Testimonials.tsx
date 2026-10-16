@@ -1,24 +1,25 @@
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
-const testimonials = [
+// Project results written by me, not client quotes. Only add a quote here if a client actually said it.
+const results = [
   {
     client: "BenFit International Gym",
-    role: "Luxury Fitness · Lagos, Nigeria",
-    quote:
-      "A professional online portal that showcases our premium classes, training packages, and membership options — built to convert visitors into active gym members.",
+    role: "Fitness · Lagos, Nigeria",
+    result:
+      "Built a full website showing their classes, training packages and memberships, with an enquiry flow that turns visitors into new members.",
   },
   {
     client: "The Oyster Society",
     role: "Luxury Events · London, UK",
-    quote:
-      "A site that feels as premium as our clientele. Event planners can explore our services and enquire effortlessly — polished, elegant, and built to convert.",
+    result:
+      "Built a premium site that matches their high-end clientele, so event planners can browse services and send a booking enquiry in a few clicks.",
   },
   {
-    client: "International Clients",
-    role: "UK · South Africa · USA · Nigeria",
-    quote:
-      "Fast turnaround, mobile-first builds, and clear communication from kickoff to launch. Exactly what you want when hiring a developer remotely.",
+    client: "T-Rex Water Damage Restoration",
+    role: "Restoration · Bulverde, Texas",
+    result:
+      "Built a concept homepage for a family-run company with no website, with a big emergency call button and clear services, so local searchers can find and call them.",
   },
 ];
 
@@ -42,23 +43,23 @@ export function Testimonials() {
         >
           <div className="flex items-center gap-4 mb-6">
             <span className="font-sans text-[hsl(36,88%,52%)] text-[10px] tracking-[0.25em] uppercase">
-              05 — Trusted By
+              08 — Results
             </span>
             <div className="h-px bg-white/8 flex-1" />
           </div>
 
           <h2 className="font-display font-bold tracking-tight text-3xl md:text-5xl text-white mb-4">
-            Clients &{" "}
+            What I've{" "}
             <span className="serif-italic font-normal" style={{ color: "hsl(36,88%,52%)" }}>
-              outcomes
+              delivered
             </span>
           </h2>
           <p className="font-sans text-white/45 text-lg mb-12 max-w-xl">
-            Real projects for real businesses — from Lagos fitness brands to London luxury events.
+            Real projects for real businesses, from a Texas restoration company to Lagos fitness and London events.
           </p>
 
           <div className="grid md:grid-cols-3 gap-4">
-            {testimonials.map((item, index) => (
+            {results.map((item, index) => (
               <motion.div
                 key={item.client}
                 initial={{ opacity: 0, y: 24 }}
@@ -67,14 +68,12 @@ export function Testimonials() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="glass-card p-6 rounded-2xl flex flex-col gap-4"
               >
-                <Quote size={20} style={{ color: "hsl(36,88%,52%)" }} className="opacity-70" />
-                <p className="font-sans text-sm text-white/60 leading-relaxed flex-1">
-                  "{item.quote}"
-                </p>
+                <CheckCircle2 size={20} style={{ color: "hsl(36,88%,52%)" }} className="opacity-70" />
                 <div>
                   <p className="font-display font-bold text-white text-sm">{item.client}</p>
                   <p className="font-sans text-xs text-white/35 mt-1">{item.role}</p>
                 </div>
+                <p className="font-sans text-sm text-white/60 leading-relaxed flex-1">{item.result}</p>
               </motion.div>
             ))}
           </div>

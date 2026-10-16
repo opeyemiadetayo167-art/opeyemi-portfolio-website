@@ -14,9 +14,11 @@ interface FormState {
 type Status = "idle" | "loading" | "success" | "error";
 
 const PROJECT_TYPES = [
+  "Free homepage preview",
+  "Local business website",
+  "Google Business Profile setup",
   "Business Website",
   "Landing Page",
-  "Portfolio",
   "Full-Stack App",
   "Other",
 ];

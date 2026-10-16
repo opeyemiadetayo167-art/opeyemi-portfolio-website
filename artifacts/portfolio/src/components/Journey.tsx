@@ -56,13 +56,13 @@ export function Journey() {
           className="max-w-4xl mx-auto"
         >
           <div className="flex items-center gap-4 mb-6">
-            <span className="font-sans text-[hsl(36,88%,52%)] text-[10px] tracking-[0.25em] uppercase">02 — Journey</span>
+            <span className="font-sans text-[hsl(36,88%,52%)] text-[10px] tracking-[0.25em] uppercase">02 — Why It Matters</span>
             <div className="h-px bg-white/8 flex-1" />
           </div>
 
-          <h2 className="font-display font-bold tracking-tight text-3xl md:text-5xl text-white mb-4">My Story</h2>
+          <h2 className="font-display font-bold tracking-tight text-3xl md:text-5xl text-white mb-4">Why this matters</h2>
           <p className="font-sans text-white/45 text-base md:text-lg mb-8 md:mb-16 max-w-2xl">
-            This isn't about my journey. It's about what's happening to your business right now — and how fast that changes.
+            What's happening to your business right now — and how fast that changes.
           </p>
 
           <div className="relative">

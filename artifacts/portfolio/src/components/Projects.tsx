@@ -16,6 +16,25 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "T-Rex Water Damage Restoration",
+    shortDescription:
+      "Concept build for a real Bulverde, TX restoration company with zero web presence — showing what's possible when a business goes from invisible to found.",
+    overview:
+      "T-Rex is a family-owned water, fire, and mold restoration company in Bulverde, TX with no website at all — completely invisible on Google next to national franchises like SERVPRO and PuroClean. I built this concept homepage to show exactly what closing that gap could look like: a hero section that visualizes the actual problem (a mocked search result showing them missing), clear services, real trust-building copy, and a direct emergency call-to-action.",
+    image: "/projects/trex-restoration.png",
+    tags: ["Local Business", "Local SEO", "Concept Build"],
+    features: [
+      "Hero visual that shows the exact problem: a mocked Google search result where competitors appear and the business doesn't",
+      "Trust-building copy addressing real objections (family-run vs. a franchise dispatch line)",
+      "Emergency-focused call-to-action matching how customers actually search in a crisis",
+      "Fully responsive, built to load fast on mobile where most emergency searches happen",
+    ],
+    problem:
+      "A real, experienced restoration company was losing every local search to national franchises simply because they had no website. This concept shows the fix.",
+    demo: null,
+    github: null,
+  },
+  {
     title: "BenFit International Gym",
     shortDescription:
       "Luxury fitness website for one of Lagos's top fitness centres at UNILAG, Bariga.",
@@ -53,26 +72,6 @@ const projects: Project[] = [
     problem:
       "The Oyster Society required a site that felt as premium as their clientele — Rolls Royce, Cartier, Sotheby's — while making it effortless for event planners to enquire and book.",
     demo: "https://www.oystersociety.co.uk",
-    github: null,
-  },
-  {
-    title: "Portfolio Website",
-    shortDescription:
-      "A highly animated personal portfolio built with React, Vite, and AI-assisted development.",
-    overview:
-      "This very website — a production-grade personal portfolio built from the ground up using React, Tailwind CSS, and Framer Motion. Every section, animation, and interaction was crafted with the goal of converting visitors into freelance clients.",
-    image: "/projects/project3.png",
-    tags: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
-    features: [
-      "Scroll-triggered entrance animations on every section",
-      "Mobile-first responsive design",
-      "SEO-optimized with structured data",
-      "Professional typography and color system",
-      "Editorial dark luxury visual direction",
-    ],
-    problem:
-      "Developers need a personal brand platform that not only showcases their skills but actively attracts freelance clients. This portfolio was built to do exactly that.",
-    demo: "#hero",
     github: null,
   },
   {
@@ -350,7 +349,7 @@ export function Projects() {
             Featured Projects
           </h2>
           <p className="font-sans text-white/45 text-lg mb-12 max-w-xl">
-            A selection of projects that showcase my frontend skills, design sensibility, and problem-solving approach.
+            Real business websites and concept builds — each one solving a specific problem: getting a business found, trusted, and booked.
           </p>
 
           {/* Project cards — consistent image-left / info-right layout */}
