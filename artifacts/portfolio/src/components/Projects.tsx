@@ -16,6 +16,101 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Everetts Affordable Handyman",
+    shortDescription:
+      "I designed and built this website for Everetts Affordable Handyman, a Tulsa, OK handyman with 100+ Google reviews, to turn searches into calls.",
+    overview:
+      "Everetts Affordable Handyman Services is a well-reviewed Tulsa handyman that had no website, only a Google listing. I designed and built this site to show what a simple, trustworthy web presence could do for them: their real rating up front, a clear list of the jobs they handle, and a phone number that is never more than a tap away.",
+    image: "/projects/everetts-handyman-tulsa.png",
+    tags: ["Sample Site", "Handyman", "Local Business"],
+    features: [
+      "Click-to-call phone button in the header and hero",
+      "Google rating and review count shown up front for instant trust",
+      "Services, reviews and contact sections written for homeowners",
+      "Mobile-first layout for people searching on their phones",
+    ],
+    problem:
+      "A busy handyman with great reviews was invisible to anyone who Googled him and didn't already know his number.",
+    demo: "https://everetts-handyman-tulsa.netlify.app",
+    github: null,
+  },
+  {
+    title: "Excellent Exterior Maintenance",
+    shortDescription:
+      "I designed and built this website for Excellent Exterior Maintenance, a Tulsa pressure washing crew, built around before-and-after results.",
+    overview:
+      "Excellent Exterior Maintenance is a Tulsa exterior cleaning company with a 4.9-star Google rating and no website. I designed and built this site around what sells pressure washing: before-and-after results, a clear list of surfaces they clean, and a fast way to get a free estimate.",
+    image: "/projects/excellent-exterior-tulsa.png",
+    tags: ["Sample Site", "Pressure Washing", "Local Business"],
+    features: [
+      "Before-and-after showcase as the main visual",
+      "Free estimate call-to-action and click-to-call number",
+      "Rating, review count and service area shown at a glance",
+      "Clean, fast, mobile-first build",
+    ],
+    problem:
+      "Customers who found this crew through word of mouth had nowhere to see their work or request an estimate online.",
+    demo: "https://excellent-exterior-tulsa.netlify.app",
+    github: null,
+  },
+  {
+    title: "Cristian Roofing",
+    shortDescription:
+      "I designed and built this website for Cristian Roofing in San Antonio, focused on storm damage, inspections and free estimates.",
+    overview:
+      "Cristian Roofing does residential and commercial roofing in San Antonio. This site speaks to what local homeowners actually worry about (hail, heat and spring storms) and makes it easy to call or request a free estimate.",
+    image: "/projects/cristian-roofing.png",
+    tags: ["Sample Site", "Roofing", "Local Business"],
+    features: [
+      "Hero written for South Texas weather and storm damage",
+      "Free estimate button and click-to-call in the header",
+      "Services, roof size, process and service-area sections",
+      "Illustrated hero that loads fast on mobile",
+    ],
+    problem:
+      "Roofing customers compare several companies before calling, and a company without a site rarely makes the shortlist.",
+    demo: "https://cristian-roofing.netlify.app",
+    github: null,
+  },
+  {
+    title: "Abdo Construction",
+    shortDescription:
+      "I designed and built this website for Abdo Construction, a San Antonio bathroom and kitchen remodeling contractor.",
+    overview:
+      "Abdo Construction is a locally owned remodeling company in San Antonio. The site leads with their best-known work, bathroom and kitchen remodels, and pairs real project photos with a free estimate request and their Facebook reputation.",
+    image: "/projects/abdo-construction-sa.png",
+    tags: ["Sample Site", "Remodeling", "Local Business"],
+    features: [
+      "Project photo hero that shows the quality of the work",
+      "Free estimate form and click-to-call number",
+      "Services, past work, about and FAQ pages",
+      "Trust signals: locally owned, free estimates, recommendation rate",
+    ],
+    problem:
+      "Remodeling is a big-ticket decision, and homeowners want to see past work before they call.",
+    demo: "https://abdo-construction-sa.netlify.app",
+    github: null,
+  },
+  {
+    title: "Ruff Roofing",
+    shortDescription:
+      "I designed and built this website for Ruff Roofing, a multi-city Texas roofer, built around a free inspection booking form.",
+    overview:
+      "A higher-end roofing build for a company serving Houston, Dallas, Austin and San Antonio. The hero puts a free-inspection booking form right next to the headline, with financing, warranty and reviews sections to answer objections before the call.",
+    image: "/projects/ruff-roofing-concept.png",
+    tags: ["Sample Site", "Roofing", "Lead Generation"],
+    features: [
+      "Booking form for free inspections in the hero",
+      "Warranty, financing and reviews sections",
+      "Location pages for multiple Texas cities",
+      "Bold, high-contrast design built to convert",
+    ],
+    problem:
+      "Roof replacements are expensive, so the site has to build trust and capture the lead before the visitor leaves.",
+    demo: "https://ruff-roofing-concept.netlify.app",
+    github: null,
+  },
+  {
     title: "BenFit International Gym",
     shortDescription:
       "Luxury fitness website for one of Lagos's top fitness centres at UNILAG, Bariga.",
@@ -53,6 +148,25 @@ const projects: Project[] = [
     problem:
       "The Oyster Society required a site that felt as premium as their clientele — Rolls Royce, Cartier, Sotheby's — while making it effortless for event planners to enquire and book.",
     demo: "https://www.oystersociety.co.uk",
+    github: null,
+  },
+  {
+    title: "Osamac Deals",
+    shortDescription:
+      "I designed and built this website for Osamac Deals, an off-market real estate business in the USA and Dubai, in English and French.",
+    overview:
+      "Osamac Deals sources discounted, off-market properties and sends them to investors. The site explains their deal sourcing, co-wholesaling and referral services, and drives visitors to join the buyers list or submit a deal, in English or French.",
+    image: "/projects/osamac-deals.png",
+    tags: ["Sample Site", "Real Estate", "Bilingual"],
+    features: [
+      "English / French language switch",
+      "Buyers list sign-up and deal submission calls-to-action",
+      "Markets, deals, process and FAQ sections",
+      "Premium dark design for an investor audience",
+    ],
+    problem:
+      "Investors need to trust a deal source quickly, so the site has to look established and make the next step obvious.",
+    demo: "https://osamac-deals.netlify.app",
     github: null,
   },
   {
@@ -330,7 +444,7 @@ export function Projects() {
             Featured Projects
           </h2>
           <p className="font-sans text-white/45 text-lg mb-12 max-w-xl">
-            Real business websites and concept builds — each one solving a specific problem: getting a business found, trusted, and booked.
+            Every site below was designed and built by me, each one solving a specific problem: getting a business found, trusted, and booked.
           </p>
 
           {/* Project cards — consistent image-left / info-right layout */}
