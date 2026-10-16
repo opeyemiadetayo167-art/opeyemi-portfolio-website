@@ -15,12 +15,6 @@ const results = [
     result:
       "Built a premium site that matches their high-end clientele, so event planners can browse services and send a booking enquiry in a few clicks.",
   },
-  {
-    client: "T-Rex Water Damage Restoration",
-    role: "Restoration · Bulverde, Texas",
-    result:
-      "Built a concept homepage for a family-run company with no website, with a big emergency call button and clear services, so local searchers can find and call them.",
-  },
 ];
 
 export function Testimonials() {
@@ -55,10 +49,10 @@ export function Testimonials() {
             </span>
           </h2>
           <p className="font-sans text-white/45 text-lg mb-12 max-w-xl">
-            Real projects for real businesses, from a Texas restoration company to Lagos fitness and London events.
+            Real websites for real businesses, from a Lagos fitness brand to a London luxury events company.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             {results.map((item, index) => (
               <motion.div
                 key={item.client}

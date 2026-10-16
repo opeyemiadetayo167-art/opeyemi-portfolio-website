@@ -16,25 +16,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "T-Rex Water Damage Restoration",
-    shortDescription:
-      "Concept build for a real Bulverde, TX restoration company with zero web presence — showing what's possible when a business goes from invisible to found.",
-    overview:
-      "T-Rex is a family-owned water, fire, and mold restoration company in Bulverde, TX with no website at all — completely invisible on Google next to national franchises like SERVPRO and PuroClean. I built this concept homepage to show exactly what closing that gap could look like: a hero section that visualizes the actual problem (a mocked search result showing them missing), clear services, real trust-building copy, and a direct emergency call-to-action.",
-    image: "/projects/trex-restoration.png",
-    tags: ["Local Business", "Local SEO", "Concept Build"],
-    features: [
-      "Hero visual that shows the exact problem: a mocked Google search result where competitors appear and the business doesn't",
-      "Trust-building copy addressing real objections (family-run vs. a franchise dispatch line)",
-      "Emergency-focused call-to-action matching how customers actually search in a crisis",
-      "Fully responsive, built to load fast on mobile where most emergency searches happen",
-    ],
-    problem:
-      "A real, experienced restoration company was losing every local search to national franchises simply because they had no website. This concept shows the fix.",
-    demo: null,
-    github: null,
-  },
-  {
     title: "BenFit International Gym",
     shortDescription:
       "Luxury fitness website for one of Lagos's top fitness centres at UNILAG, Bariga.",
